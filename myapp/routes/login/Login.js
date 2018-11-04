@@ -56,7 +56,7 @@ class Login extends Component{
       .then((res) => {
 
           if (res.state === true) {
-            if(res.user.role=='admin'){
+            if(res.user.role=='admin'||res.user.role=='superadmin'){
               this.setToken(res.token);
               Actions.screen1();
             }else{
