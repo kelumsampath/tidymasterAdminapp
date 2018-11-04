@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text ,AsyncStorage, Alert } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 export default class Logout extends React.Component {
     constructor(props){
@@ -15,7 +16,7 @@ export default class Logout extends React.Component {
             'do you want to logout?',
             [
             {text:'Yes', onPress:()=>this.removeToken()},
-            {text:'No', onPress:()=>this.props.navigation.navigate('Home')}
+            {text:'No', onPress:()=>Actions.pop()}
             ],
             { cancelable: false}
         )
@@ -24,11 +25,11 @@ export default class Logout extends React.Component {
             try{
                 let thistoken=await AsyncStorage.removeItem("token");
                 alert("You are sucessfuly loggedout");
-                this.props.navigation.navigate('login');
+                Actions.login();
                 //alert(a)
             }catch(error){
                 alert("token get error");
-                this.props.navigation.navigate('Home');
+                Actions.pop();
             }
       }
 

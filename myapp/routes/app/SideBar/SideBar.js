@@ -9,7 +9,8 @@ import {
   Content,
   Icon
 } from "native-base";
-const routes = ["Home", "second", "third","logout"];
+import { Actions } from "react-native-router-flux";
+
 export default class SideBar extends React.Component {
   render() {
     return (
@@ -42,19 +43,31 @@ export default class SideBar extends React.Component {
             }}
           />
           <List
-            dataArray={routes}
-            contentContainerStyle={{ marginTop: 120 }}
-            renderRow={data => {
-              return (
-                <ListItem
-                  button
-                  onPress={() => this.props.navigation.navigate(data)}
-                >
-                  <Text>{data}</Text>
-                </ListItem>
-              );
-            }}
-          />
+          style={{
+            marginTop:120
+          }}
+          >
+            <ListItem
+            onPress={()=>Actions.screen1()}>
+            <Text>screen1</Text>
+            </ListItem>
+
+            <ListItem
+            onPress={()=>Actions.screen2()}>
+            <Text>screen2</Text>
+            </ListItem>
+
+            <ListItem
+            onPress={()=>Actions.screen3()}>
+            <Text>screen3</Text>
+            </ListItem>
+
+            <ListItem
+            onPress={()=>Actions.logout()}>
+            <Text>Logout</Text>
+            </ListItem>
+
+          </List>
         </Content>
       </Container>
     );
