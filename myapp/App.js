@@ -39,7 +39,7 @@ export default class App extends Component{
             key="drawer"
             drawer
             contentComponent={SideBar}
-            drawerWidth={300}
+            drawerWidth={250}
             hideNavBar
           >
               <Scene
