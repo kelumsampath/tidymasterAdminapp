@@ -19,6 +19,7 @@ import Screen3 from './screen/sc3';
 import Login from './routes/login/Login';
 import SideBar from './routes/app/SideBar/SideBar';
 import Logout from './routes/app/Logout/index';
+import CreateNewAdmin from './routes/app/addNewUser/createNewAdmin';
 
 export default class App extends Component{
   render() {
@@ -58,6 +59,12 @@ export default class App extends Component{
               key='screen3'
               component={Screen3}
               title='Screen3'
+              />
+
+              <Scene
+              key='CreateNewAdmin'
+              component={CreateNewAdmin}
+              title='CreateNewAdmin'
               />
 
               <Scene

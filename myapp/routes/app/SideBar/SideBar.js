@@ -63,6 +63,11 @@ export default class SideBar extends React.Component {
             </ListItem>
 
             <ListItem
+            onPress={()=>Actions.CreateNewAdmin()}>
+            <Text>Create new admin</Text>
+            </ListItem>
+
+            <ListItem
             onPress={()=>Actions.logout()}>
             <Text>Logout</Text>
             </ListItem>
