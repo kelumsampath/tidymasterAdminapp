@@ -67,7 +67,7 @@ export default class CreateNewAdmin extends Component{
 
     createnewadmin(){
         //alert(this.state.token)
-        fetch('http://192.168.137.1:3000/admin/specialuser', {
+        fetch('http://192.168.43.107:3000/admin/specialuser', {
           method: 'POST',
           headers: {
             "Authorization": this.state.token,
