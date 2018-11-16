@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text,ScrollView, TouchableOpacity, TextInput, StyleSheet, AsyncStorage } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import {RadioGroup, RadioButton} from 'react-native-flexi-radio-button';
 
 export default class CreateNewAdmin extends Component{
     constructor(props){
@@ -38,14 +39,17 @@ export default class CreateNewAdmin extends Component{
     handlenic=(text)=>{
     this.setState({nic:text})
     }
-    handlegender=(text)=>{
-    this.setState({gender:text})
-    }
+    // handlegender=(text)=>{
+    // this.setState({gender:text})
+    // }
     handleaddress=(text)=>{
     this.setState({address:text})
     }
     handletoken=(text)=>{
     this.setState({token:text})
+    }
+    onSelect(index,value){
+    this.setState({gender:value})
     }
 
     async getToken(){
@@ -154,12 +158,19 @@ export default class CreateNewAdmin extends Component{
                onChangeText = {this.handlenic}/>
             
             <Text>Gender:</Text>
-            <TextInput style = {styles.input}
-               underlineColorAndroid = "transparent"
-               placeholder = "Username"
-               placeholderTextColor = "#9a73ef"
-               autoCapitalize = "none"
-               onChangeText = {this.handlegender}/>
+              <RadioGroup
+              onSelect = {(index, value) => this.onSelect(index, value)}
+              >
+              <RadioButton value={'Male'} >
+                <Text>Male</Text>
+              </RadioButton>
+      
+              <RadioButton value={'Female'}>
+                <Text>Female</Text>
+              </RadioButton>
+              </RadioGroup>
+            
+      
             
             <Text>Address:</Text>
             <TextInput style = {styles.input}
