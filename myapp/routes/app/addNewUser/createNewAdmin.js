@@ -19,31 +19,77 @@ export default class CreateNewAdmin extends Component{
         role:"admin",
         address:"",
         company:"NO",
-        token:null
+        token:null,
+        firstnamevalidate:false,
+        lastnamevalidate:false,
+        usernamevalidate:false,
+        emailvalidate:false,
+        phonenovalidate:false,
+        nicvalidate:false,
+        addressvalidate:false,
+
+
     }
     handlefistname=(text)=>{
+      if(this.validatetext(text)){
         this.setState({firstname:text})
+        this.setState({firstnamevalidate:true})
+      }else{
+        this.setState({firstnamevalidate:false})
+      }
       }
     handlelastname=(text)=>{
-    this.setState({lastname:text})
+   if(this.validatetext(text)){
+        this.setState({lastname:text})
+        this.setState({lastnamevalidate:true})
+      }else{
+        this.setState({lastnamevalidate:false})
+      }
     }
     handleusername=(text)=>{
-    this.setState({username:text})
+    if(text!=null){
+      this.setState({username:text})
+      this.setState({usernamevalidate:true})
+    }else{
+      this.setState({usernamevalidate:false})
+    }
     }
     handleemail=(text)=>{
-    this.setState({email:text})
+      let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+      if(reg.test(text)){
+        this.setState({email:text})
+        this.setState({emailvalidate:true})
+      }else{
+        this.setState({emailvalidate:false})
+      }
     }
     handlephoneno=(text)=>{
-    this.setState({phoneno:text})
+      let reg = /^[0-9]+$/;
+    if(reg.test(text)){
+      this.setState({phoneno:text})
+      this.setState({phonenovalidate:true})
+    }else{
+      this.setState({phonenovalidate:false})
+    }
     }
     handlenic=(text)=>{
-    this.setState({nic:text})
+    if(text!=null){
+      this.setState({nic:text})
+      this.setState({nicvalidate:true})
+    }else{
+      this.setState({nicvalidate:false})
+    }
     }
     // handlegender=(text)=>{
     // this.setState({gender:text})
     // }
     handleaddress=(text)=>{
-    this.setState({address:text})
+    if(text!=null){
+      this.setState({address:text})
+      this.setState({addressvalidate:true})
+    }else{
+      this.setState({addressvalidate:false})
+    }
     }
     handletoken=(text)=>{
     this.setState({token:text})
@@ -51,6 +97,14 @@ export default class CreateNewAdmin extends Component{
     onSelect(index,value){
     this.setState({gender:value})
     }
+    validatetext(text){
+      alph=/^[a-zA-Z]+$/
+      if(alph.test(text)){
+        return true;
+      }else{
+        return false;
+      }
+     }
 
     async getToken(){
         try{
@@ -109,7 +163,7 @@ export default class CreateNewAdmin extends Component{
     return(
       <ScrollView style = {styles.container}>
             <Text>Firstname:</Text>
-            <TextInput style = {styles.input}
+            <TextInput style = {[styles.input,!this.state.firstnamevalidate?styles.error:null]}
                underlineColorAndroid = "transparent"
                placeholder = "Firstname"
                placeholderTextColor = "#9a73ef"
@@ -117,7 +171,7 @@ export default class CreateNewAdmin extends Component{
                onChangeText = {this.handlefistname}/>
 
             <Text>lastname:</Text>
-            <TextInput style = {styles.input}
+            <TextInput style = {[styles.input,!this.state.lastnamevalidate?styles.error:null]}
                underlineColorAndroid = "transparent"
                placeholder = "Lastname"
                placeholderTextColor = "#9a73ef"
@@ -125,7 +179,7 @@ export default class CreateNewAdmin extends Component{
                onChangeText = {this.handlelastname}/>
             
             <Text>Username:</Text>
-            <TextInput style = {styles.input}
+            <TextInput style = {[styles.input,!this.state.usernamevalidate?styles.error:null]}
                underlineColorAndroid = "transparent"
                placeholder = "Username"
                placeholderTextColor = "#9a73ef"
@@ -133,7 +187,7 @@ export default class CreateNewAdmin extends Component{
                onChangeText = {this.handleusername}/>
 
             <Text>Email:</Text>
-            <TextInput style = {styles.input}
+            <TextInput style = {[styles.input,!this.state.emailvalidate?styles.error:null]}
                underlineColorAndroid = "transparent"
                placeholder = "Email"
                placeholderTextColor = "#9a73ef"
@@ -142,15 +196,15 @@ export default class CreateNewAdmin extends Component{
             
             
             <Text>Phone Number:</Text>
-            <TextInput style = {styles.input}
+            <TextInput style = {[styles.input,!this.state.phonenovalidate?styles.error:null]}
                underlineColorAndroid = "transparent"
-               placeholder = "Password"
+               placeholder = "Phone Number"
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
                onChangeText = {this.handlephoneno}/>
 
             <Text>NIC Number:</Text>
-            <TextInput style = {styles.input}
+            <TextInput style = {[styles.input,!this.state.nicvalidate?styles.error:null]}
                underlineColorAndroid = "transparent"
                placeholder = "NIC"
                placeholderTextColor = "#9a73ef"
@@ -173,7 +227,7 @@ export default class CreateNewAdmin extends Component{
       
             
             <Text>Address:</Text>
-            <TextInput style = {styles.input}
+            <TextInput style = {[styles.input,!this.state.addressvalidate?styles.error:null]}
                underlineColorAndroid = "transparent"
                placeholder = "Address"
                placeholderTextColor = "#9a73ef"
@@ -212,6 +266,10 @@ const styles = StyleSheet.create({
     },
     submitButtonText:{
        color: 'white'
+    },
+    error:{
+      borderWidth:3,
+      borderColor:'red'
     }
   })
   
