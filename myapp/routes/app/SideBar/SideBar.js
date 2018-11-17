@@ -63,8 +63,18 @@ export default class SideBar extends React.Component {
             </ListItem>
 
             <ListItem
+            onPress={()=>Actions.CreateNewSuperAdmin()}>
+            <Text>Create new superAdmin</Text>
+            </ListItem>
+
+            <ListItem
             onPress={()=>Actions.CreateNewAdmin()}>
             <Text>Create new admin</Text>
+            </ListItem>
+
+            <ListItem
+            onPress={()=>Actions.CreateNewAdvertiser()}>
+            <Text>Create new advertiser</Text>
             </ListItem>
 
             <ListItem
