@@ -27,7 +27,7 @@ export default class CreateNewAdmin extends Component{
         phonenovalidate:false,
         nicvalidate:false,
         addressvalidate:false,
-
+        gendervalidate:false
 
     }
     handlefistname=(text)=>{
@@ -47,7 +47,8 @@ export default class CreateNewAdmin extends Component{
       }
     }
     handleusername=(text)=>{
-    if(text!=null){
+      let reg = /^[a-zA-z0-9]+$/;
+    if(reg.test(text)){
       this.setState({username:text})
       this.setState({usernamevalidate:true})
     }else{
@@ -73,7 +74,8 @@ export default class CreateNewAdmin extends Component{
     }
     }
     handlenic=(text)=>{
-    if(text!=null){
+      let reg = /^[a-zA-z0-9]+$/;
+    if(reg.test(text)){
       this.setState({nic:text})
       this.setState({nicvalidate:true})
     }else{
@@ -84,7 +86,8 @@ export default class CreateNewAdmin extends Component{
     // this.setState({gender:text})
     // }
     handleaddress=(text)=>{
-    if(text!=null){
+      let reg = /^[a-zA-z0-9,.]+$/;
+    if(reg.test(text)){
       this.setState({address:text})
       this.setState({addressvalidate:true})
     }else{
@@ -95,7 +98,12 @@ export default class CreateNewAdmin extends Component{
     this.setState({token:text})
     }
     onSelect(index,value){
-    this.setState({gender:value})
+      if(value!=null){
+        this.setState({gender:value})
+        this.setState({gendervalidate:true})
+      }else{
+        this.setState({gendervalidate:false})
+      }
     }
     validatetext(text){
       alph=/^[a-zA-Z]+$/
@@ -212,7 +220,7 @@ export default class CreateNewAdmin extends Component{
                onChangeText = {this.handlenic}/>
             
             <Text>Gender:</Text>
-              <RadioGroup
+              <RadioGroup style = {[!this.state.gendervalidate?styles.error:null]}
               onSelect = {(index, value) => this.onSelect(index, value)}
               >
               <RadioButton value={'Male'} >
@@ -235,11 +243,19 @@ export default class CreateNewAdmin extends Component{
                onChangeText = {this.handleaddress}/>
             
             <TouchableOpacity
-               style = {styles.submitButton}
+               //style = {styles.submitButton}
+               style={this.state.firstnamevalidate && this.state.lastnamevalidate && this.state.usernamevalidate && this.state.emailvalidate && this.state.phonenovalidate && this.state.nicvalidate && this.state.gendervalidate && this.state.addressvalidate ? styles.submitButton : styles.disabled}
                onPress = {
                   () => this.createnewadmin()
                }>
                <Text style = {styles.submitButtonText}> Submit </Text>
+            </TouchableOpacity>
+
+             <TouchableOpacity
+               //style = {styles.submitButton}
+               style={this.state.firstnamevalidate && this.state.lastnamevalidate && this.state.usernamevalidate && this.state.emailvalidate && this.state.phonenovalidate && this.state.nicvalidate && this.state.gendervalidate && this.state.addressvalidate ? styles.disabled : styles.submitButtonInvalid }
+               >
+               <Text style = {styles.submitButtonText}>Invalid form filling </Text>
             </TouchableOpacity>
          </ScrollView>
     );
@@ -264,6 +280,13 @@ const styles = StyleSheet.create({
        height: 40,
        marginBottom:40
     },
+    submitButtonInvalid: {
+      backgroundColor: 'red',
+      padding: 10,
+      margin: 15,
+      height: 40,
+      marginBottom:40
+   },
     submitButtonText:{
        color: 'white'
     },
