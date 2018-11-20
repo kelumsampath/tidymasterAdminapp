@@ -13,6 +13,9 @@ import Screen3 from './screen/sc3';
 import Login from './routes/login/Login';
 import SideBar from './routes/app/SideBar/SideBar';
 import Logout from './routes/app/Logout/index';
+import CreateNewAdmin from './routes/app/addNewUser/createNewAdmin';
+import CreateNewAdvertiser from './routes/app/addNewUser/createNewAdvertiser';
+import CreateNewSuperAdmin from './routes/app/addNewUser/createNewSuperAdmin';
 
 export default class App extends Component{
   render() {
@@ -52,6 +55,24 @@ export default class App extends Component{
               key='screen3'
               component={Screen3}
               title='Screen3'
+              />
+
+              <Scene
+              key='CreateNewSuperAdmin'
+              component={CreateNewSuperAdmin}
+              title='CreateNewSuperAdmin'
+              />
+
+              <Scene
+              key='CreateNewAdmin'
+              component={CreateNewAdmin}
+              title='CreateNewAdmin'
+              />
+
+              <Scene
+              key='CreateNewAdvertiser'
+              component={CreateNewAdvertiser}
+              title='CreateNewAdvertiser'
               />
 
               <Scene

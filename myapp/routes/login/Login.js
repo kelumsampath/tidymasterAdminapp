@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet , AsyncStorage } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+var config=require('./../../screen/config');
 
 class Login extends Component{
 
@@ -40,7 +41,7 @@ class Login extends Component{
   }
 
   login(username,password){
-    fetch('http://192.168.137.1:3000/user/login', {
+    fetch(config.config.hostname+'/user/login', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -64,6 +65,7 @@ class Login extends Component{
             }
               
           } else {
+              
               alert(res.msg)
           }
       })
