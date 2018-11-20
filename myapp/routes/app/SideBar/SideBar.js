@@ -66,7 +66,10 @@ export default class SideBar extends React.Component {
               width: 70,
               position: "absolute",
               alignSelf: "center",
-              top: 20
+              top: 20,
+              borderRadius: 80,
+              borderStartWidth:5,
+              borderColor:"red"
             }}
             source={{
               uri:
@@ -77,7 +80,8 @@ export default class SideBar extends React.Component {
           style={{
             position: "absolute",
             alignSelf: "center",
-            top: 105
+            top: 105,
+            color:"white"
           }}
           >{appint.data.username}</Text>
           <List
