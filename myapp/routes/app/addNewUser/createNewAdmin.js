@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text,ScrollView, TouchableOpacity, TextInput, StyleSheet, AsyncStorage } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import {RadioGroup, RadioButton} from 'react-native-flexi-radio-button';
+var config=require('./../../../screen/config');
 
 export default class CreateNewAdmin extends Component{
     constructor(props){
@@ -133,7 +134,7 @@ export default class CreateNewAdmin extends Component{
 
     createnewadmin(){
         //alert(this.state.token)
-        fetch('http://192.168.43.107:3000/admin/specialuser', {
+        fetch(config.config.hostname+'/admin/specialuser', {
           method: 'POST',
           headers: {
             "Authorization": this.state.token,
