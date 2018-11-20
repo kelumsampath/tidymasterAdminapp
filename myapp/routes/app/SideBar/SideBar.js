@@ -81,7 +81,8 @@ export default class SideBar extends React.Component {
             position: "absolute",
             alignSelf: "center",
             top: 105,
-            color:"white"
+            color:"white",
+            fontSize:20
           }}
           >{appint.data.username}</Text>
           <List
