@@ -121,6 +121,11 @@ export default class SideBar extends React.Component {
             </ListItem>
 
             <ListItem
+            onPress={()=>Actions.tabbar()}>
+            <Text>Review Job Posts</Text>
+            </ListItem>
+
+            <ListItem
             onPress={()=>Actions.logout()}>
             <Text>Logout</Text>
             </ListItem>

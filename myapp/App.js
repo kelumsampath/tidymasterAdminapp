@@ -22,6 +22,15 @@ import Logout from './routes/app/Logout/index';
 import CreateNewAdmin from './routes/app/addNewUser/createNewAdmin';
 import CreateNewAdvertiser from './routes/app/addNewUser/createNewAdvertiser';
 import CreateNewSuperAdmin from './routes/app/addNewUser/createNewSuperAdmin';
+import PendingJobs from './routes/app/jobreview/PendingJobs';
+import AcceptedJobs from './routes/app/jobreview/AcceptedJobs';
+import RejectedJobs from './routes/app/jobreview/RejectedJobs';
+
+const TabIcon=({ selected , title})=>{
+  return(
+    <Text style={{color:selected? '#F0F8FF':'#000000'}}>{title}</Text>
+  )
+}
 
 export default class App extends Component{
   render() {
@@ -80,6 +89,26 @@ export default class App extends Component{
               component={CreateNewAdvertiser}
               title='CreateNewAdvertiser'
               />
+
+              <Scene
+                key="tabbar"
+                tabs
+                tabBarStyle={{backgroundColor:'#1E90FF'}}
+                tabBarPosition={'top'}
+              >
+                <Scene key="pendingjobs" title="Pending" icon={TabIcon}>
+                  <Scene key="pending" component={PendingJobs} title="pending" initial></Scene>
+                </Scene>
+
+                <Scene key="acceptedjobs"  title="Accepted" icon={TabIcon}>
+                  <Scene key="accepted" component={AcceptedJobs} title="accepted"></Scene>
+                </Scene>
+                
+                <Scene key="rejectedjobs"  title="Rejected" icon={TabIcon}>
+                  <Scene key="rejected" component={RejectedJobs} title="rejected"></Scene>
+                </Scene>
+              
+              </Scene>
 
               <Scene
               key='logout'
