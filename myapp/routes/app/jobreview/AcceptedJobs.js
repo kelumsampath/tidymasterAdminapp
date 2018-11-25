@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 
-import { Container, Header, Content, Card, CardItem, Body, Text } from 'native-base';
+import { Container, Content, Text, List, ListItem, Thumbnail } from 'native-base';
 import CompleteFlatList from 'react-native-complete-flatlist';
 var config=require('./../../../screen/config');
 
@@ -74,21 +74,17 @@ export default class AcceptedJobs extends Component {
 
     //console.log(item+' this is original data')
     return (
-        <Container>
-          <Header />
-          <Content>
-            <Card>
-              <CardItem>
-                <Body>
-                  <Text>
-                  {data.title}
-                  </Text>
-                  
-                </Body>
-              </CardItem>
-            </Card>
-          </Content>
-        </Container>
+          <List>
+              <ListItem>
+                  <Thumbnail square size={80} source={{
+              uri:
+                "https://raw.githubusercontent.com/GeekyAnts/NativeBase-KitchenSink/master/assets/drawer-cover.png"
+            }} />
+                  <Text>{data.title}</Text>
+                  <Text note>{data.levelofjob}</Text>
+              </ListItem>
+          </List>
+      
       );
   }
 
