@@ -6,7 +6,7 @@ import CompleteFlatList from 'react-native-complete-flatlist';
 var config=require('./../../../screen/config');
 
 
-const data = [
+var data = [
   { name: 'Fattah', status: 'Active', time: '8:10 PM', date: '1 Jan 2018' },
   { name: 'Syah', status: 'Active', time: '9:14 PM', date: '1 Dec 2018' },
   { name: 'Izzat', status: 'Active', time: '8:15 PM', date: '1 Jan 2018' },
@@ -38,7 +38,9 @@ export default class AcceptedJobs extends Component {
     this.getallacceptedjobpost();
   }
   state={
-    token:""
+    token:"",
+    data:[{ name: 'Fattah', status: 'Active', time: '8:10 PM', date: '1 Jan 2018' },
+    { name: 'Syah', status: 'Active', time: '9:14 PM', date: '1 Dec 2018' },]
   }
 
   async getToken(){
@@ -79,7 +81,9 @@ export default class AcceptedJobs extends Component {
       .then((res) => {
 
           if (res.state === true) {
-            this.data=res.jobs;
+            var jobpost=res.jobs;
+            //console.warn(jobpost)
+            this.setState( { data: jobpost });
           } else {
               alert(res.msg)
           }
@@ -104,7 +108,7 @@ export default class AcceptedJobs extends Component {
               <CardItem>
                 <Body>
                   <Text>
-                  {data.name}
+                  {data.title}
                   </Text>
                   
                 </Body>
@@ -119,12 +123,12 @@ export default class AcceptedJobs extends Component {
     const { navigation } = this.props;
     return (
       <CompleteFlatList
-      searchKey={['name', 'status', 'time', 'date']}
+      searchKey={['title', 'status', 'time', 'date']}
       highlightColor="yellow"
       pullToRefreshCallback={() => {
        // alert('refreshing');
       }}
-      data={data}
+      data={this.state.data}
       renderSeparator={null}
       renderItem={this.cell}
     />
