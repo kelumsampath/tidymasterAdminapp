@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { StyleSheet, Image, TouchableOpacity, View } from 'react-native';
 import { Container, Content, Text, List, ListItem, Thumbnail } from 'native-base';
@@ -117,6 +116,7 @@ export default class AcceptedJobs extends Component {
     //console.log('this is index number : '+index)
 
     //console.log(item+' this is original data')
+    if(data.status=='accepted'){
     return (
       <List>
         <ListItem style={styles.card}>
@@ -139,6 +139,7 @@ export default class AcceptedJobs extends Component {
       </List>
 
     );
+    }
   }
 
   render() {
