@@ -166,10 +166,6 @@ const styles = StyleSheet.create({
     borderColor: '#7a42f4',
     borderWidth: 1
   },
-  root: {
-    backgroundColor: "#ffffff",
-    marginTop: 10,
-  },
   container: {
     paddingLeft: 19,
     paddingRight: 16,
@@ -185,10 +181,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 6
-  },
-  separator: {
-    height: 1,
-    backgroundColor: "#CCCCCC"
   },
   image: {
     width: 60,
