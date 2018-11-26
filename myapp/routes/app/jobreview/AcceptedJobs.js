@@ -117,7 +117,7 @@ export default class AcceptedJobs extends Component {
     //console.log('this is index number : '+index)
 
     //console.log(item+' this is original data')
-    if(data.status=='accepted'){
+    
     return (
       <List  style={styles.card}>
         <ListItem>
@@ -155,7 +155,7 @@ export default class AcceptedJobs extends Component {
       </List>
 
     );
-    }
+    
   }
 
   render() {
