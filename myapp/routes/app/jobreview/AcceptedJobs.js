@@ -40,13 +40,15 @@ export default class AcceptedJobs extends Component {
 
   getallacceptedjobpost() {
     //alert(this.state.token)
-    fetch(config.config.hostname + '/admin/adminalljobs', {
+    fetch(config.config.hostname + '/admin/adminjobsbystatus', {
       method: 'POST',
       headers: {
         "Authorization": this.state.token,
         'Content-Type': 'application/json',
-
       },
+      body: JSON.stringify({
+        status:"accepted"
+      })
 
     })
 
