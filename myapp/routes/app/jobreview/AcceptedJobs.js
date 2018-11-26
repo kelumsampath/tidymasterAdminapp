@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, Image, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Image, TouchableOpacity, View, Button } from 'react-native';
 import { Container, Content, Text, List, ListItem, Thumbnail } from 'native-base';
 import CompleteFlatList from 'react-native-complete-flatlist';
+import { Actions } from 'react-native-router-flux';
 var config = require('./../../../screen/config');
 
 
@@ -118,12 +119,9 @@ export default class AcceptedJobs extends Component {
     //console.log(item+' this is original data')
     if(data.status=='accepted'){
     return (
-      <List>
-        <ListItem style={styles.card}>
+      <List  style={styles.card}>
+        <ListItem>
           <View style={styles.container}>
-            <TouchableOpacity onPress={() => { }}>
-              <Image style={styles.image} source={{ uri: "https://cdn-images-1.medium.com/max/1000/1*ZF5Pc5eg9KYQP-Cpo6IkyQ.png" }} />
-            </TouchableOpacity>
             <View style={styles.content}>
               <Text style={styles.name} rkType='primary3 mediumLine'>{data.title}</Text>
               <Text rkType='primary3 mediumLine'>Payment Status:{data.paymentstatus}</Text>
@@ -134,7 +132,25 @@ export default class AcceptedJobs extends Component {
                 </Text>
               </View>
             </View>
-          </View>
+          </View>  
+        </ListItem>
+        <ListItem>
+        <View style={styles.containerbtn}>
+              <View style={styles.buttonContainer}>
+                <Button title="Pending" 
+                color="#AFAF00"
+                onPress = {
+                  () => Actions.screen1()
+                }/>
+              </View>
+              <View style={styles.buttonContainer}>
+                <Button title="Reject"
+                color="#FF3D00"
+                onPress = {
+                  () => Actions.screen1()
+               }/>
+              </View>
+            </View>
         </ListItem>
       </List>
 
@@ -163,7 +179,7 @@ const styles = StyleSheet.create({
   card: {
     marginBottom: 15,
     marginLeft: 0,
-    height: 100,
+    height: 200,
     borderColor: '#7a42f4',
     borderWidth: 1
   },
@@ -172,10 +188,13 @@ const styles = StyleSheet.create({
     paddingRight: 16,
     paddingVertical: 12,
     flexDirection: 'row',
-    alignItems: 'flex-start'
+    alignItems: 'flex-end'
   },
   content: {
     marginLeft: 16,
+    flex: 1,
+  },
+  contentt: {
     flex: 1,
   },
   contentHeader: {
@@ -197,4 +216,26 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
   },
+  submitButton: {
+    backgroundColor: '#7a42f4',
+    padding: 10,
+    height: 30,
+    width:60,
+    flexDirection: "row"
+ },
+ 
+ submitButtonText:{
+   fontSize:10,
+  color: 'white'
+},
+containerbtn: {
+  flex: 1,
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+  
+},
+buttonContainer: {
+  flex: 1,
+},
 })
