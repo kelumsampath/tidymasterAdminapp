@@ -128,26 +128,23 @@ export default class RejectedJobs extends Component {
               <Text style={styles.name} rkType='primary3 mediumLine'>{data.title}</Text>
               <Text rkType='primary3 mediumLine'>Payment Status:{data.paymentstatus}</Text>
               <Text rkType='primary3 mediumLine'>Location:{data.joblocation}</Text>
-              <View style={styles.contentHeader}>
-                <Text style={styles.time}>
-                {this.getdate(data.updatedDate)} {this.getval(data.updatedDate)}
-                </Text>
-              </View>
+              <Text rkType='primary3 mediumLine'>Catogary:{data.categoryname}</Text>
+              <Text rkType='primary3 mediumLine'style={styles.time}>Posted: {this.getdate(data.updatedDate)} {this.getval(data.updatedDate)}</Text>
             </View>
           </View>  
         </ListItem>
         <ListItem>
         <View style={styles.containerbtn}>
               <View style={styles.buttonContainer}>
-                <Button title="Pending" 
-                color="#AFAF00"
+                <Button title="ACCEPT" 
+                color="#00B000"
                 onPress = {
                   () => Actions.screen1()
                 }/>
               </View>
               <View style={styles.buttonContainer}>
-                <Button title="Reject"
-                color="#FF3D00"
+                <Button title="PENDING"
+                color="#AFAF00"
                 onPress = {
                   () => Actions.screen1()
                }/>
@@ -181,7 +178,7 @@ const styles = StyleSheet.create({
   card: {
     marginBottom: 15,
     marginLeft: 0,
-    height: 200,
+    height: 230,
     borderColor: '#7a42f4',
     borderWidth: 1
   },
