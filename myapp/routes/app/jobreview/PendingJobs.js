@@ -168,7 +168,7 @@ export default class PendingJobs extends Component {
     const { navigation } = this.props;
     return (
       <CompleteFlatList
-        searchKey={['title', 'status', 'time', 'date']}
+        searchKey={['title', 'joblocation', 'categoryname']}
         highlightColor="yellow"
         pullToRefreshCallback={() => {
           // alert('refreshing');
