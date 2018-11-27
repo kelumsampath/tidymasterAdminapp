@@ -26,6 +26,8 @@ import PendingJobs from './routes/app/jobreview/PendingJobs';
 import AcceptedJobs from './routes/app/jobreview/AcceptedJobs';
 import RejectedJobs from './routes/app/jobreview/RejectedJobs';
 import Accept from './routes/app/jobreview/accept';
+import Reject from './routes/app/jobreview/reject';
+import Pending from './routes/app/jobreview/pending';
 
 const TabIcon=({ selected , title})=>{
   return(
@@ -113,6 +115,8 @@ export default class App extends Component{
 
               
               <Scene key="Accept" component={Accept} title="Accept"></Scene>
+              <Scene key="Reject" component={Reject} title="Reject"></Scene>
+              <Scene key="Pending" component={Pending} title="Pending"></Scene>
               
 
               <Scene

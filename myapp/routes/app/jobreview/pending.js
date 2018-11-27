@@ -17,11 +17,11 @@ class UselessTextInput extends Component {
     }
 }
 
-export default class Accept extends Component {
+export default class Pending extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: 'Correct job post',
+            text: 'pending state',
         };
         this.getToken();
     }
@@ -49,7 +49,7 @@ export default class Accept extends Component {
 
     adminreview() {
         //alert(this.state.token)
-        fetch(config.config.hostname + '/admin/acceptpost', {
+        fetch(config.config.hostname + '/admin/pendingpost', {
           method: 'POST',
           headers: {
             "Authorization": this.state.token,
@@ -97,7 +97,7 @@ export default class Accept extends Component {
                onPress = {
                   () =>this.adminreview()
                }>
-               <Text style = {styles.submitButtonText}> Accept </Text>
+               <Text style = {styles.submitButtonText}> Pending </Text>
             </TouchableOpacity>
             <TouchableOpacity
                style = {styles.cancelButton}
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     submitButton: {
-        backgroundColor: '#2A8F1D',
+        backgroundColor: '#AFAF00',
         padding: 10,
         margin: 15,
         height: 40,

@@ -5,7 +5,7 @@ import CompleteFlatList from 'react-native-complete-flatlist';
 import { Actions } from 'react-native-router-flux';
 var config = require('./../../../screen/config');
 var appinit = require('./../../../screen/appint');
-
+var appinit = require('./../../../screen/appint');
 
 export default class PendingJobs extends Component {
   constructor(props) {
@@ -150,7 +150,10 @@ export default class PendingJobs extends Component {
                 <Button title="REJECT"
                 color="#FF3D00"
                 onPress = {
-                  () => Actions.screen1()
+                  () => {
+                    appinit.data.postid=data.postid;
+                    Actions.Reject();
+                  }
                }/>
               </View>
             </View>

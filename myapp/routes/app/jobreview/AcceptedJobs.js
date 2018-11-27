@@ -4,7 +4,7 @@ import { Container, Content, Text, List, ListItem, Thumbnail } from 'native-base
 import CompleteFlatList from 'react-native-complete-flatlist';
 import { Actions } from 'react-native-router-flux';
 var config = require('./../../../screen/config');
-
+var appinit = require('./../../../screen/appint');
 
 export default class AcceptedJobs extends Component {
   constructor(props) {
@@ -139,14 +139,20 @@ export default class AcceptedJobs extends Component {
                 <Button title="PENDING" 
                 color="#AFAF00"
                 onPress = {
-                  () => Actions.screen1()
+                  () => {
+                    appinit.data.postid=data.postid;
+                    Actions.Pending();
+                  }
                 }/>
               </View>
               <View style={styles.buttonContainer}>
                 <Button title="REJECT"
                 color="#FF3D00"
                 onPress = {
-                  () => Actions.screen1()
+                  () => {
+                    appinit.data.postid=data.postid;
+                    Actions.Reject();
+                  }
                }/>
               </View>
             </View>
