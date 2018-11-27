@@ -3,7 +3,8 @@ var config=require('./config');
 
 var mydata=module.exports.data={
   picurl:"http://chittagongit.com//images/user-icon-jpg/user-icon-jpg-11.jpg",
-  username:""
+  username:"",
+  postid:""
 }
 
 module.exports.profdata=(token)=>{

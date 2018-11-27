@@ -25,6 +25,7 @@ import CreateNewSuperAdmin from './routes/app/addNewUser/createNewSuperAdmin';
 import PendingJobs from './routes/app/jobreview/PendingJobs';
 import AcceptedJobs from './routes/app/jobreview/AcceptedJobs';
 import RejectedJobs from './routes/app/jobreview/RejectedJobs';
+import Accept from './routes/app/jobreview/accept';
 
 const TabIcon=({ selected , title})=>{
   return(
@@ -109,6 +110,10 @@ export default class App extends Component{
                 </Scene>
               
               </Scene>
+
+              
+              <Scene key="Accept" component={Accept} title="Accept"></Scene>
+              
 
               <Scene
               key='logout'
