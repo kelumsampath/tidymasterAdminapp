@@ -12,7 +12,6 @@ export default class SearchUser extends Component {
     super(props);
     
     this.getToken();
-    this.searchuser();
   }
   state = {
     token: "",
@@ -27,6 +26,8 @@ export default class SearchUser extends Component {
       //alert(a)
       if (thistoken != null) {
         this.handletoken(thistoken);
+        this.searchuser();
+
       } else {
         Actions.login();
       }
@@ -48,9 +49,10 @@ export default class SearchUser extends Component {
       headers: {
         "Authorization": this.state.token,
         'Content-Type': 'application/json',
+        'accessresource':'registeradvertiser'
       },
       body: JSON.stringify({
-        username:this.state.username
+        username:"cv"
       })
 
     })
@@ -170,7 +172,7 @@ export default class SearchUser extends Component {
     const { navigation } = this.props;
     return (
       <CompleteFlatList
-        searchKey={['title', 'joblocation', 'categoryname']}
+        searchKey={['username', 'firstname', 'lastname','rolename']}
         highlightColor="yellow"
         pullToRefreshCallback={() => {
           // alert('refreshing');

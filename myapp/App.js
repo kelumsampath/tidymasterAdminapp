@@ -28,6 +28,7 @@ import RejectedJobs from './routes/app/jobreview/RejectedJobs';
 import Accept from './routes/app/jobreview/accept';
 import Reject from './routes/app/jobreview/reject';
 import Pending from './routes/app/jobreview/pending';
+import SearchUser from './routes/app/searchuser/searchuser';
 
 const TabIcon=({ selected , title})=>{
   return(
@@ -70,9 +71,9 @@ export default class App extends Component{
               />
 
               <Scene
-              key='screen3'
-              component={Screen3}
-              title='Screen3'
+              key='searchuser'
+              component={SearchUser}
+              title='searchuser'
               />
 
               {/* <Scene

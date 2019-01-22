@@ -101,8 +101,8 @@ export default class SideBar extends React.Component {
             </ListItem>
 
             <ListItem
-            onPress={()=>Actions.screen3()}>
-            <Text>screen3</Text>
+            onPress={()=>Actions.searchuser()}>
+            <Text>Search User</Text>
             </ListItem>
 
             {/* <ListItem
