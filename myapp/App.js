@@ -75,7 +75,7 @@ export default class App extends Component{
               title='Screen3'
               />
 
-              <Scene
+              {/* <Scene
               key='CreateNewSuperAdmin'
               component={CreateNewSuperAdmin}
               title='CreateNewSuperAdmin'
@@ -91,7 +91,27 @@ export default class App extends Component{
               key='CreateNewAdvertiser'
               component={CreateNewAdvertiser}
               title='CreateNewAdvertiser'
-              />
+              /> */}
+
+              <Scene
+                key="createuser"
+                tabs
+                tabBarStyle={{backgroundColor:'#1E90FF'}}
+                tabBarPosition={'top'}
+              >
+                <Scene key="createadmin" title="createadmin" icon={TabIcon}>
+                  <Scene key="createadmin" component={CreateNewAdmin} title="createadmin" initial></Scene>
+                </Scene>
+
+                <Scene key="createsuperadmin"  title="createsuperadmin" icon={TabIcon}>
+                  <Scene key="createsuperadmin" component={CreateNewSuperAdmin} title="createsuperadmin"></Scene>
+                </Scene>
+                
+                <Scene key="createadvertiser"  title="createadvertiser" icon={TabIcon}>
+                  <Scene key="createadvertiser" component={CreateNewAdvertiser} title="createadvertiser"></Scene>
+                </Scene>
+              
+              </Scene>
 
               <Scene
                 key="tabbar"

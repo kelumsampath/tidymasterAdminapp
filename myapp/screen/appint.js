@@ -23,7 +23,7 @@ module.exports.profdata=(token)=>{
     .then((res) => {
 
         if (res.state === true) {
-         // alert(res.data.username+' '+res.data.url)
+          //alert(res.data.username+' '+res.data.url)
           mydata.picurl=res.data.url
           mydata.username=res.data.username
         } else {

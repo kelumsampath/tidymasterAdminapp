@@ -105,7 +105,7 @@ export default class SideBar extends React.Component {
             <Text>screen3</Text>
             </ListItem>
 
-            <ListItem
+            {/* <ListItem
             onPress={()=>Actions.CreateNewSuperAdmin()}>
             <Text>Create new superAdmin</Text>
             </ListItem>
@@ -118,6 +118,11 @@ export default class SideBar extends React.Component {
             <ListItem
             onPress={()=>Actions.CreateNewAdvertiser()}>
             <Text>Create new advertiser</Text>
+            </ListItem> */}
+
+            <ListItem
+            onPress={()=>Actions.createuser()}>
+            <Text>Create new user</Text>
             </ListItem>
 
             <ListItem
