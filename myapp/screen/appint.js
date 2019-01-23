@@ -4,7 +4,8 @@ var config=require('./config');
 var mydata=module.exports.data={
   picurl:"http://chittagongit.com//images/user-icon-jpg/user-icon-jpg-11.jpg",
   username:"",
-  postid:""
+  postid:"",
+  uid:""
 }
 
 module.exports.profdata=(token)=>{

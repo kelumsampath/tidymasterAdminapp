@@ -29,6 +29,8 @@ import Accept from './routes/app/jobreview/accept';
 import Reject from './routes/app/jobreview/reject';
 import Pending from './routes/app/jobreview/pending';
 import SearchUser from './routes/app/searchuser/searchuser';
+import deleteuser from './routes/app/searchuser/deleteuser';
+import warnuser from './routes/app/searchuser/warnuser';
 
 const TabIcon=({ selected , title})=>{
   return(
@@ -113,6 +115,9 @@ export default class App extends Component{
                 </Scene>
               
               </Scene>
+
+              <Scene key="warnuser" component={warnuser} title="warn"></Scene>
+              <Scene key="deleteuser" component={deleteuser} title="delete"></Scene>
 
               <Scene
                 key="tabbar"

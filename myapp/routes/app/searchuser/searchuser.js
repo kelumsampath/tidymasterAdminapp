@@ -141,22 +141,22 @@ export default class SearchUser extends Component {
         <ListItem>
         <View style={styles.containerbtn}>
               <View style={styles.buttonContainer}>
-                <Button title="ACCEPT" 
+                <Button title="Warn" 
                 color="#00B000"
                 onPress = {
                   () => {
-                    appinit.data.postid=data.postid;
-                    Actions.Accept();
+                    appinit.data.uid=data.uid;
+                    Actions.warnuser();
                   }
                 }/>
               </View>
               <View style={styles.buttonContainer}>
-                <Button title="REJECT"
+                <Button title="Delete"
                 color="#FF3D00"
                 onPress = {
                   () => {
-                    appinit.data.postid=data.postid;
-                    Actions.Reject();
+                    appinit.data.uid=data.uid;
+                    Actions.deleteuser();
                   }
                }/>
               </View>
