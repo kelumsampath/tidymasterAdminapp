@@ -5,7 +5,9 @@ var mydata=module.exports.data={
   picurl:"http://chittagongit.com//images/user-icon-jpg/user-icon-jpg-11.jpg",
   username:"",
   postid:"",
-  uid:""
+  uid:"",
+  compuid:"",
+  complainid:""
 }
 
 module.exports.profdata=(token)=>{

@@ -31,6 +31,10 @@ import Pending from './routes/app/jobreview/pending';
 import SearchUser from './routes/app/searchuser/searchuser';
 import deleteuser from './routes/app/searchuser/deleteuser';
 import warnuser from './routes/app/searchuser/warnuser';
+import Uncheckedcomplains from './routes/app/complain/unchecked';
+import warncomplaineduser from './routes/app/complain/warnuser';
+import deletecomplaineduser from './routes/app/complain/deleteuser';
+import checkedcomplains from './routes/app/complain/checkedcomplain';
 
 const TabIcon=({ selected , title})=>{
   return(
@@ -150,6 +154,25 @@ export default class App extends Component{
               component={Logout}
               title='Logout'
               />
+
+              <Scene
+                key="reviewcomplain"
+                tabs
+                tabBarStyle={{backgroundColor:'#1E90FF'}}
+                tabBarPosition={'top'}
+              >
+                <Scene key="uncheckedcomplain" title="uncheckedcomplain" icon={TabIcon}>
+                  <Scene key="uncheckedcomplain" component={Uncheckedcomplains} title="uncheckedcomplain" initial></Scene>
+                </Scene>
+
+                <Scene key="checkedcomplain" title="checkedcomplain" icon={TabIcon}>
+                  <Scene key="checkedcomplain" component={checkedcomplains} title="checkedcomplain" ></Scene>
+                </Scene>
+              
+              </Scene>
+
+              <Scene key="warncomplaineduser" component={warncomplaineduser} title="warncomplaineduser"></Scene>
+              <Scene key="deletecomplaineduser" component={deletecomplaineduser} title="deletecomplaineduser"></Scene>
 
           </Scene>
 

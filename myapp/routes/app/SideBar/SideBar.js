@@ -131,6 +131,11 @@ export default class SideBar extends React.Component {
             </ListItem>
 
             <ListItem
+            onPress={()=>Actions.reviewcomplain()}>
+            <Text>Review Complains</Text>
+            </ListItem>
+
+            <ListItem
             onPress={()=>Actions.logout()}>
             <Text>Logout</Text>
             </ListItem>
