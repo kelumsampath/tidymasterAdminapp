@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text,ScrollView, TouchableOpacity, TextInput, StyleSheet, AsyncStorage } from 'react-native';
+import { View, ScrollView, TouchableOpacity, TextInput, StyleSheet, AsyncStorage } from 'react-native';
+import { Container, DatePicker, Input, Item, Text, Form, Button } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import {RadioGroup, RadioButton} from 'react-native-flexi-radio-button';
 var config=require('./../../../screen/config');
@@ -170,60 +171,43 @@ export default class CreateNewAdmin extends Component{
     
   render(){
     return(
-      <ScrollView style = {styles.container}>
-            <Text>Firstname:</Text>
-            <TextInput style = {[styles.input,!this.state.firstnamevalidate?styles.error:null]}
-               underlineColorAndroid = "transparent"
-               placeholder = "Firstname"
-               placeholderTextColor = "#9a73ef"
-               autoCapitalize = "none"
-               onChangeText = {this.handlefistname}/>
+    <Container style={{padding:10, backgroundColor:'#F5F5F5'}}>
+      <ScrollView>
+       
+         <Form>
 
-            <Text>lastname:</Text>
-            <TextInput style = {[styles.input,!this.state.lastnamevalidate?styles.error:null]}
-               underlineColorAndroid = "transparent"
-               placeholder = "Lastname"
-               placeholderTextColor = "#9a73ef"
-               autoCapitalize = "none"
-               onChangeText = {this.handlelastname}/>
-            
-            <Text>Username:</Text>
-            <TextInput style = {[styles.input,!this.state.usernamevalidate?styles.error:null]}
-               underlineColorAndroid = "transparent"
-               placeholder = "Username"
-               placeholderTextColor = "#9a73ef"
-               autoCapitalize = "none"
-               onChangeText = {this.handleusername}/>
+           <Item regular style={styles.txtBox}>
+             <Input placeholder='Firstname:' 
+                onChangeText = {this.handlefistname}/> 
+            </Item>
 
-            <Text>Email:</Text>
-            <TextInput style = {[styles.input,!this.state.emailvalidate?styles.error:null]}
-               underlineColorAndroid = "transparent"
-               placeholder = "Email"
-               placeholderTextColor = "#9a73ef"
-               autoCapitalize = "none"
-               onChangeText = {this.handleemail}/>
-            
-            
-            <Text>Phone Number:</Text>
-            <TextInput style = {[styles.input,!this.state.phonenovalidate?styles.error:null]}
-               underlineColorAndroid = "transparent"
-               placeholder = "Phone Number"
-               placeholderTextColor = "#9a73ef"
-               autoCapitalize = "none"
-               onChangeText = {this.handlephoneno}/>
+            <Item regular style={styles.txtBox}>
+             <Input placeholder='Lastname:' 
+                onChangeText = {this.handlelastname}/> 
+            </Item>
 
-            <Text>NIC Number:</Text>
-            <TextInput style = {[styles.input,!this.state.nicvalidate?styles.error:null]}
-               underlineColorAndroid = "transparent"
-               placeholder = "NIC"
-               placeholderTextColor = "#9a73ef"
-               autoCapitalize = "none"
-               onChangeText = {this.handlenic}/>
-            
-            <Text>Gender:</Text>
-              <RadioGroup style = {[!this.state.gendervalidate?styles.error:null]}
-              onSelect = {(index, value) => this.onSelect(index, value)}
-              >
+
+            <Item regular style={styles.txtBox}>
+             <Input placeholder='Username:' 
+                onChangeText = {this.handleusername}/> 
+            </Item>
+
+            <Item regular style={styles.txtBox}>
+             <Input placeholder='Email:' 
+                onChangeText = {this.handleemail}/> 
+            </Item>
+
+            <Item regular style={styles.txtBox}>
+             <Input placeholder='Phone No:' 
+                onChangeText = {this.handlephoneno}/> 
+            </Item>
+
+            <Item regular style={styles.txtBox}>
+             <Input placeholder='NIC:' 
+                onChangeText = {this.handlenic}/> 
+            </Item>
+
+            <RadioGroup onSelect = {(index, value) => this.onSelect(index, value)}>
               <RadioButton value={'Male'} >
                 <Text>Male</Text>
               </RadioButton>
@@ -232,33 +216,110 @@ export default class CreateNewAdmin extends Component{
                 <Text>Female</Text>
               </RadioButton>
               </RadioGroup>
+
+            <Item regular style={styles.txtBox}>
+             <Input placeholder='Address:' 
+                onChangeText = {this.handleaddress}/> 
+            </Item>
+
+            <Button>
+
+            </Button>
+              <Text>Submit</Text>
+            </Form>
+        </ScrollView>
+      </Container>
+
+
+      // <ScrollView style = {styles.container}>
+      //       <Text>Firstname:</Text>
+      //       <TextInput style = {[styles.input,!this.state.firstnamevalidate?styles.error:null]}
+      //          underlineColorAndroid = "transparent"
+      //          placeholder = "Firstname"
+      //          placeholderTextColor = "#9a73ef"
+      //          autoCapitalize = "none"
+      //          onChangeText = {this.handlefistname}/>
+
+      //       <Text>lastname:</Text>
+      //       <TextInput style = {[styles.input,!this.state.lastnamevalidate?styles.error:null]}
+      //          underlineColorAndroid = "transparent"
+      //          placeholder = "Lastname"
+      //          placeholderTextColor = "#9a73ef"
+      //          autoCapitalize = "none"
+      //          onChangeText = {this.handlelastname}/>
+            
+      //       <Text>Username:</Text>
+      //       <TextInput style = {[styles.input,!this.state.usernamevalidate?styles.error:null]}
+      //          underlineColorAndroid = "transparent"
+      //          placeholder = "Username"
+      //          placeholderTextColor = "#9a73ef"
+      //          autoCapitalize = "none"
+      //          onChangeText = {this.handleusername}/>
+
+      //       <Text>Email:</Text>
+      //       <TextInput style = {[styles.input,!this.state.emailvalidate?styles.error:null]}
+      //          underlineColorAndroid = "transparent"
+      //          placeholder = "Email"
+      //          placeholderTextColor = "#9a73ef"
+      //          autoCapitalize = "none"
+      //          onChangeText = {this.handleemail}/>
+            
+            
+      //       <Text>Phone Number:</Text>
+      //       <TextInput style = {[styles.input,!this.state.phonenovalidate?styles.error:null]}
+      //          underlineColorAndroid = "transparent"
+      //          placeholder = "Phone Number"
+      //          placeholderTextColor = "#9a73ef"
+      //          autoCapitalize = "none"
+      //          onChangeText = {this.handlephoneno}/>
+
+      //       <Text>NIC Number:</Text>
+      //       <TextInput style = {[styles.input,!this.state.nicvalidate?styles.error:null]}
+      //          underlineColorAndroid = "transparent"
+      //          placeholder = "NIC"
+      //          placeholderTextColor = "#9a73ef"
+      //          autoCapitalize = "none"
+      //          onChangeText = {this.handlenic}/>
+            
+      //       <Text>Gender:</Text>
+      //         <RadioGroup style = {[!this.state.gendervalidate?styles.error:null]}
+      //         onSelect = {(index, value) => this.onSelect(index, value)}
+      //         >
+      //         <RadioButton value={'Male'} >
+      //           <Text>Male</Text>
+      //         </RadioButton>
+      
+      //         <RadioButton value={'Female'}>
+      //           <Text>Female</Text>
+      //         </RadioButton>
+      //         </RadioGroup>
             
       
             
-            <Text>Address:</Text>
-            <TextInput style = {[styles.input,!this.state.addressvalidate?styles.error:null]}
-               underlineColorAndroid = "transparent"
-               placeholder = "Address"
-               placeholderTextColor = "#9a73ef"
-               autoCapitalize = "none"
-               onChangeText = {this.handleaddress}/>
+      //       <Text>Address:</Text>
+      //       <TextInput style = {[styles.input,!this.state.addressvalidate?styles.error:null]}
+      //          underlineColorAndroid = "transparent"
+      //          placeholder = "Address"
+      //          placeholderTextColor = "#9a73ef"
+      //          autoCapitalize = "none"
+      //          onChangeText = {this.handleaddress}/>
             
-            <TouchableOpacity
-               //style = {styles.submitButton}
-               style={this.state.firstnamevalidate && this.state.lastnamevalidate && this.state.usernamevalidate && this.state.emailvalidate && this.state.phonenovalidate && this.state.nicvalidate && this.state.gendervalidate && this.state.addressvalidate ? styles.submitButton : styles.disabled}
-               onPress = {
-                  () => this.createnewadmin()
-               }>
-               <Text style = {styles.submitButtonText}> Submit </Text>
-            </TouchableOpacity>
+      //       <TouchableOpacity
+      //          //style = {styles.submitButton}
+      //          style={this.state.firstnamevalidate && this.state.lastnamevalidate && this.state.usernamevalidate && this.state.emailvalidate && this.state.phonenovalidate && this.state.nicvalidate && this.state.gendervalidate && this.state.addressvalidate ? styles.submitButton : styles.disabled}
+      //          onPress = {
+      //             () => this.createnewadmin()
+      //          }>
+      //          <Text style = {styles.submitButtonText}> Submit </Text>
+      //       </TouchableOpacity>
 
-             <TouchableOpacity
-               //style = {styles.submitButton}
-               style={this.state.firstnamevalidate && this.state.lastnamevalidate && this.state.usernamevalidate && this.state.emailvalidate && this.state.phonenovalidate && this.state.nicvalidate && this.state.gendervalidate && this.state.addressvalidate ? styles.disabled : styles.submitButtonInvalid }
-               >
-               <Text style = {styles.submitButtonText}>Invalid form filling </Text>
-            </TouchableOpacity>
-         </ScrollView>
+      //        <TouchableOpacity
+      //          //style = {styles.submitButton}
+      //          style={this.state.firstnamevalidate && this.state.lastnamevalidate && this.state.usernamevalidate && this.state.emailvalidate && this.state.phonenovalidate && this.state.nicvalidate && this.state.gendervalidate && this.state.addressvalidate ? styles.disabled : styles.submitButtonInvalid }
+      //          >
+      //          <Text style = {styles.submitButtonText}>Invalid form filling </Text>
+      //       </TouchableOpacity>
+      //    </ScrollView>
     );
   }
 }
@@ -294,6 +355,14 @@ const styles = StyleSheet.create({
     error:{
       borderWidth:3,
       borderColor:'red'
-    }
+    },
+    txtBox:{
+      backgroundColor:'#ffffff',
+      marginTop:8,
+      height:60,
+     },
+     regBtn: {
+       marginTop: 10
+     }
   })
   
