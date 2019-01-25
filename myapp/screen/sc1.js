@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text,WebView  } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 export default class Screen1 extends Component{
   render(){
     return(
-      <View>
-        <Text style={{color:"red"}}
-        onPress={()=>Actions.screen2()}
-        >Register</Text>
-        
-      </View>
+    
+      <WebView 
+      originWhitelist={['*']}
+      source={{ html: '<iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7hZ14t0hZQDBG-jhd0JG_U7_oQHtFj9mJtYtC31uaNQPg4hDlOjGZnunTxGUfGP5we7CIcMJ47XAY/pubchart?oid=1546564518&amp;format=interactive"></iframe>' }}
+      
+    />
     );
   }
 }
