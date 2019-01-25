@@ -3,7 +3,7 @@ import { Container, Header, Content, Tab, Tabs } from 'native-base';
 import Tab1 from './PendingJobs';
 import Tab2 from './AcceptedJobs';
 import Tab3 from './RejectedJobs';
-export default class CreateNewUser extends Component {
+export default class JobReview extends Component {
   render() {
     return (
       <Container>

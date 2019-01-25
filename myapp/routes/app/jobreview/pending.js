@@ -67,7 +67,7 @@ export default class Pending extends Component {
           .then((res) => {
     
             if (res.state === true) {
-              Actions.tabbar();
+              Actions.JobReview();
             } else {
               alert(res.msg)
             }
@@ -102,7 +102,7 @@ export default class Pending extends Component {
             <TouchableOpacity
                style = {styles.cancelButton}
                onPress = {
-                  () => Actions.tabbar()
+                  () => Actions.JobReview()
                }>
                <Text style = {styles.submitButtonText}> Cancel </Text>
             </TouchableOpacity>

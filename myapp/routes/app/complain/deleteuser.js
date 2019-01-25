@@ -69,7 +69,7 @@ export default class deleteuser extends Component {
     
             if (res.state === true) {
               alert(res.msg) 
-              Actions.reviewcomplain();
+              Actions.ReviewComplaigns();
             } else {
               alert(res.msg)
             }
@@ -104,7 +104,7 @@ export default class deleteuser extends Component {
             <TouchableOpacity
                style = {styles.cancelButton}
                onPress = {
-                  () => Actions.reviewcomplain()
+                  () => Actions.ReviewComplaigns()
                }>
                <Text style = {styles.submitButtonText}> Cancel </Text>
             </TouchableOpacity>

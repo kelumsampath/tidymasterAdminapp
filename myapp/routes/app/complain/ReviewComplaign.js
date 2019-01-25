@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Header, Content, Tab, Tabs } from 'native-base';
 import Tab1 from './unchecked';
 import Tab2 from './checkedcomplain';
-export default class CreateNewUser extends Component {
+export default class ReviewCompain extends Component {
   render() {
     return (
       <Container>
