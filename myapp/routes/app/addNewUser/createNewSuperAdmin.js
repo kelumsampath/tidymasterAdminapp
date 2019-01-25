@@ -160,7 +160,7 @@ export default class CreateNewSuperAdmin extends Component{
     
               if (res.state === true) {
                 alert(res.msg)
-                Actions.CreateNewAdmin()
+                Actions.createuser()
               } else {
                   alert(res.msg)
               }
