@@ -12,6 +12,7 @@ import {
   View
 } from 'react-native';
 import { Router,Scene, Actions} from 'react-native-router-flux';
+import { Icon } from 'native-base';
 
 import Screen2 from './screen/sc2';
 import Screen1 from './screen/sc1';
@@ -42,16 +43,23 @@ const TabIcon=({ selected , title})=>{
   )
 }
 
+const MenuIcon = () => {
+  return (
+    <Icon name='menu' size={30}/>
+  )
+}
+
 export default class App extends Component{
   render() {
     return (
-      <Router>
+      <Router navigationBarStyle={{ backgroundColor: '#00BFFF' }}>
 
         <Scene key="root">
          
               
           <Scene
           key='login'
+          hideNavBar
           component={Login}
           title='Login'
           initial
@@ -63,6 +71,7 @@ export default class App extends Component{
             contentComponent={SideBar}
             drawerWidth={300}
             hideNavBar
+            drawerIcon={MenuIcon}
           >
               <Scene
               key='screen1'

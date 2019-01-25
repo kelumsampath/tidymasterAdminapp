@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, TextInput, StyleSheet , AsyncStorage } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, StyleSheet , AsyncStorage, Image } from 'react-native';
+import { Container,Content, Item, Icon, Input, H2, Form, Button } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 var config=require('./../../screen/config');
 
@@ -74,62 +75,94 @@ class Login extends Component{
 
   render(){
     return(
-      <View style = {styles.container}>
-            <Text>Username:</Text>
-            <TextInput style = {styles.input}
-               underlineColorAndroid = "transparent"
-               placeholder = "Username"
-               placeholderTextColor = "#9a73ef"
-               autoCapitalize = "none"
-               onChangeText = {this.handleUsername}/>
+      <Container style = {styles.container}>
+        <Content style={styles.content}>
+        <Image source={require('./../../images/logo.png')}  style={styles.img} />
+
+        <H2 style={styles.header}> ADMIN LOGIN </H2>
+
+        <Form>
             
-            <Text>Password:</Text>
-            <TextInput style = {styles.input}
-               underlineColorAndroid = "transparent"
-               placeholder = "Password"
-               placeholderTextColor = "#9a73ef"
-               autoCapitalize = "none"
-               onChangeText = {this.handlePassword}/>
+              <Item rounded style={styles.txtBox}>
+                    <Icon active name='contact'/>
+                    <Input placeholder='Username' 
+                           onChangeText = {this.handleUsername}/> 
+                 </Item>
             
-            <TouchableOpacity
-               style = {styles.submitButton}
-               onPress = {
-                  () => this.login(this.state.username, this.state.password)
-               }>
-               <Text style = {styles.submitButtonText}> Submit </Text>
+
+            <Item rounded style={styles.txtBox}>
+                    <Icon active name='key'/>
+                    <Input placeholder='Password' 
+                           onChangeText = {this.handlePassword}/> 
+                 </Item>
+
+                </Form>
+
+        
+
+            <Button style={styles.signBtn} full rounded info
+                  onPress = {() => this.login(this.state.username, this.state.password)}>
+                   <Text> Login  </Text> 
+             </Button>
+
+             <View style={styles.blockUnderLogin}>
+            <TouchableOpacity>
+              <Text style={styles.forgot}> Forget password ? </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity
-               style = {styles.submitButton}
-               onPress = {
-                  () => Actions.screen1()
-               }>
-               <Text style = {styles.submitButtonText}> Submit </Text>
-            </TouchableOpacity>
-         </View>
+          </View>
+              
+            </Content>
+         </Container>
     );
   }
 }
 
-export default Login;
+
 
 const styles = StyleSheet.create({
-  container: {
-     paddingTop: 23
-  },
-  input: {
-     margin: 15,
-     height: 40,
-     borderColor: '#7a42f4',
-     borderWidth: 1
-  },
-  submitButton: {
-     backgroundColor: '#7a42f4',
-     padding: 10,
-     margin: 15,
-     height: 40,
-  },
-  submitButtonText:{
-     color: 'white'
-  }
-})
+    container:{
+      padding:6,
+      backgroundColor:'#F5F5F5'
+    },
+    content:{
+      marginTop: 30
+    },
+    header:{
+      alignItems:"center",
+      textAlign:"center",
+      marginTop:20,
+      marginBottom:30,
+      fontFamily: 'Iowan Old Style'
+    },
+    img:{
+      width:145,
+      height:120,
+      alignSelf:"center",
+      marginTop:20
+    },
+    txtBox:{
+     backgroundColor:'#ffffff',
+     marginTop:5,
+     height:60,
+    },
+    blockUnderLogin: {
+      flex:1,
+      flexDirection: 'row',
+      alignItems:'center',
+      justifyContent:'center'
+    },
+    forgot:{
+      flex:1,
+      alignItems:"center",
+      marginTop:20,
+      color:'#C0C0C0',
+      fontFamily: 'Iowan Old Style'
+    },
+    signBtn:{
+      marginTop: 5
+    }
+  })
+
+
+export default Login;
