@@ -36,6 +36,9 @@ import Uncheckedcomplains from './routes/app/complain/unchecked';
 import warncomplaineduser from './routes/app/complain/warnuser';
 import deletecomplaineduser from './routes/app/complain/deleteuser';
 import checkedcomplains from './routes/app/complain/checkedcomplain';
+import CreateNewUser from './routes/app/addNewUser/CreateNewUser';
+import JobReview from './routes/app/jobreview/JobReview';
+import ReviewComplaigns from './routes/app/complain/ReviewComplaign';
 
 const TabIcon=({ selected , title})=>{
   return(
@@ -91,99 +94,40 @@ export default class App extends Component{
               title='searchuser'
               />
 
-              {/* <Scene
-              key='CreateNewSuperAdmin'
-              component={CreateNewSuperAdmin}
-              title='CreateNewSuperAdmin'
+              <Scene
+              key='CreateNewUser'
+              component={CreateNewUser}
+              title='CreateNewUser'
               />
 
               <Scene
-              key='CreateNewAdmin'
-              component={CreateNewAdmin}
-              title='CreateNewAdmin'
+              key='JobReview'
+              component={JobReview}
+              title='JobReview'
               />
 
               <Scene
-              key='CreateNewAdvertiser'
-              component={CreateNewAdvertiser}
-              title='CreateNewAdvertiser'
-              /> */}
-
-              <Scene
-                key="createuser"
-                tabs
-                tabBarStyle={{backgroundColor:'#1E90FF'}}
-                tabBarPosition={'top'}
-              >
-                <Scene key="createadmin" title="createadmin" icon={TabIcon}>
-                  <Scene key="createadmin" component={CreateNewAdmin} title="createadmin" initial></Scene>
-                </Scene>
-
-                <Scene key="createsuperadmin"  title="createsuperadmin" icon={TabIcon}>
-                  <Scene key="createsuperadmin" component={CreateNewSuperAdmin} title="createsuperadmin"></Scene>
-                </Scene>
-                
-                <Scene key="createadvertiser"  title="createadvertiser" icon={TabIcon}>
-                  <Scene key="createadvertiser" component={CreateNewAdvertiser} title="createadvertiser"></Scene>
-                </Scene>
+              key='ReviewComplaigns'
+              component={ReviewComplaigns}
+              title='ReviewComplaigns'
+              />
               
-              </Scene>
-
-              <Scene key="warnuser" component={warnuser} title="warn"></Scene>
-              <Scene key="deleteuser" component={deleteuser} title="delete"></Scene>
-
-              <Scene
-                key="tabbar"
-                tabs
-                tabBarStyle={{backgroundColor:'#1E90FF'}}
-                tabBarPosition={'top'}
-              >
-                <Scene key="pendingjobs" title="Pending" icon={TabIcon}>
-                  <Scene key="pending" component={PendingJobs} title="pending" initial></Scene>
-                </Scene>
-
-                <Scene key="acceptedjobs"  title="Accepted" icon={TabIcon}>
-                  <Scene key="accepted" component={AcceptedJobs} title="accepted"></Scene>
-                </Scene>
-                
-                <Scene key="rejectedjobs"  title="Rejected" icon={TabIcon}>
-                  <Scene key="rejected" component={RejectedJobs} title="rejected"></Scene>
-                </Scene>
-              
-              </Scene>
-
-              
-              <Scene key="Accept" component={Accept} title="Accept"></Scene>
-              <Scene key="Reject" component={Reject} title="Reject"></Scene>
-              <Scene key="Pending" component={Pending} title="Pending"></Scene>
-              
-
               <Scene
               key='logout'
               component={Logout}
               title='Logout'
               />
-
-              <Scene
-                key="reviewcomplain"
-                tabs
-                tabBarStyle={{backgroundColor:'#1E90FF'}}
-                tabBarPosition={'top'}
-              >
-                <Scene key="uncheckedcomplain" title="uncheckedcomplain" icon={TabIcon}>
-                  <Scene key="uncheckedcomplain" component={Uncheckedcomplains} title="uncheckedcomplain" initial></Scene>
-                </Scene>
-
-                <Scene key="checkedcomplain" title="checkedcomplain" icon={TabIcon}>
-                  <Scene key="checkedcomplain" component={checkedcomplains} title="checkedcomplain" ></Scene>
-                </Scene>
-              
-              </Scene>
-
-              <Scene key="warncomplaineduser" component={warncomplaineduser} title="warncomplaineduser"></Scene>
-              <Scene key="deletecomplaineduser" component={deletecomplaineduser} title="deletecomplaineduser"></Scene>
-
           </Scene>
+
+          <Scene key="warncomplaineduser" component={warncomplaineduser} title="warncomplaineduser"></Scene>
+          <Scene key="deletecomplaineduser" component={deletecomplaineduser} title="deletecomplaineduser"></Scene>
+
+          <Scene key="Accept" component={Accept} title="Accept"></Scene>
+          <Scene key="Reject" component={Reject} title="Reject"></Scene>
+          <Scene key="Pending" component={Pending} title="Pending"></Scene>
+
+          <Scene key="warnuser" component={warnuser} title="warn"></Scene>
+          <Scene key="deleteuser" component={deleteuser} title="delete"></Scene>
 
         </Scene>
 

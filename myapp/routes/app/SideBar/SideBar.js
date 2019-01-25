@@ -1,13 +1,13 @@
 import React from "react";
-import { AppRegistry, Image, StatusBar,AsyncStorage } from "react-native";
+import { AppRegistry, Image, StatusBar,AsyncStorage, StyleSheet } from "react-native";
 import {
   Button,
   Text,
-  Container,
+  Separator,
   List,
   ListItem,
   Content,
-  Icon
+  View,Body,Icon,Left
 } from "native-base";
 import { Actions } from "react-native-router-flux";
 var appint=require('./../../../screen/appint');
@@ -45,104 +45,140 @@ export default class SideBar extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Content>
-          <Image
-            source={{
-              uri:
-                "https://raw.githubusercontent.com/GeekyAnts/NativeBase-KitchenSink/master/assets/drawer-cover.png"
-            }}
-            style={{
-              height: 130,
-              width: "100%",
-              alignSelf: "stretch",
-              position: "absolute"
-            }}
-          />
-          <Image
-            square
-            style={{
-              height: 80,
-              width: 70,
-              position: "absolute",
-              alignSelf: "center",
-              top: 20,
-              borderRadius: 80,
-              borderStartWidth:5,
-              borderColor:"red"
-            }}
-            source={{
-              uri:
-                appint.data.picurl
-            }}
-          />
-          <Text
-          style={{
-            position: "absolute",
-            alignSelf: "center",
-            top: 105,
-            color:"white",
-            fontSize:20
-          }}
-          >{appint.data.username}</Text>
-          <List
-          style={{
-            marginTop:130
-          }}
-          >
-            <ListItem
-            onPress={()=>Actions.screen1()}>
-            <Text>screen1</Text>
-            </ListItem>
+      <View style={{flex:1}}> 
 
-            <ListItem
-            onPress={()=>Actions.screen2()}>
-            <Text>screen2</Text>
-            </ListItem>
+      
+           <View style={{flex: 1,overflow: 'hidden',alignItems: 'center',backgroundColor: '#5297e4'}}>
+                <Image square style={styles.avatar} source={{uri: appint.data.picurl}}/>
+                <Text style={styles.name}>{appint.data.username}</Text>      
+            </View>
 
-            <ListItem
-            onPress={()=>Actions.searchuser()}>
-            <Text>Search User</Text>
-            </ListItem>
 
-            {/* <ListItem
-            onPress={()=>Actions.CreateNewSuperAdmin()}>
-            <Text>Create new superAdmin</Text>
-            </ListItem>
+            <View style={{flex: 2}}>
+                <Content>
+                    <List>
+                    <Separator bordered noTopBorder />
 
-            <ListItem
-            onPress={()=>Actions.CreateNewAdmin()}>
-            <Text>Create new admin</Text>
-            </ListItem>
+                    <ListItem icon  onPress={()=>Actions.screen1()}>
+                    <Left>
+                        <Button style={{ backgroundColor: "#FF9501" }}>
+                            <Icon active name="briefcase" />
+                        </Button>
+                    </Left>
+                    <Body>
+                    <Text style={styles.description}>Screen 1</Text>
+                    </Body>
+                    </ListItem>
 
-            <ListItem
-            onPress={()=>Actions.CreateNewAdvertiser()}>
-            <Text>Create new advertiser</Text>
-            </ListItem> */}
+                    <ListItem icon onPress={()=>Actions.screen2()}>
+                    <Left>
+                        <Button style={{ backgroundColor: "#000000" }}>
+                            <Icon active name="contact" />
+                        </Button>
+                    </Left>
+                    <Body>
+                        <Text style={styles.description}>Monthly Views</Text>
+                    </Body>
+                    </ListItem>
 
-            <ListItem
-            onPress={()=>Actions.createuser()}>
-            <Text>Create new user</Text>
-            </ListItem>
+                    <Separator bordered/>
 
-            <ListItem
-            onPress={()=>Actions.tabbar()}>
-            <Text>Review Job Posts</Text>
-            </ListItem>
+                    <ListItem icon onPress={()=>Actions.searchuser()}>
+                    <Left>
+                        <Button style={{ backgroundColor: "#4CDA64", marginTop: 2 }}>
+                            <Icon active name="add" />
+                        </Button>
+                    </Left>
+                    <Body>
+                        <Text style={styles.description}>Search User</Text>
+                    </Body>
+                    </ListItem>
 
-            <ListItem
-            onPress={()=>Actions.reviewcomplain()}>
-            <Text>Review Complains</Text>
-            </ListItem>
+                    <ListItem icon  onPress={()=>Actions.CreateNewUser()}>
+                    <Left>
+                        <Button style={{ backgroundColor: "#4CDA64", marginTop: 2 }}>
+                            <Icon active name="send" />
+                        </Button>
+                    </Left>
+                    <Body>
+                        <Text style={styles.description}>Create User</Text>
+                    </Body>
+                    </ListItem>
 
-            <ListItem
-            onPress={()=>Actions.logout()}>
-            <Text>Logout</Text>
-            </ListItem>
+                    <Separator bordered/>
 
-          </List>
-        </Content>
-      </Container>
+                    <ListItem icon  onPress={()=>Actions.JobReview()}>
+                        <Left>
+                            <Button style={{ backgroundColor: "#4CDA64", marginTop: 2 }}>
+                            <Icon active name="log-out" />
+                            </Button>
+                        </Left>
+                        <Body>
+                            <Text style={styles.description}>Job Review</Text>
+                        </Body>
+                    </ListItem>
+
+                    <ListItem icon  onPress={()=>Actions.ReviewComplaigns()}>
+                        <Left>
+                            <Button style={{ backgroundColor: "#4CDA64", marginTop: 2 }}>
+                            <Icon active name="log-out" />
+                            </Button>
+                        </Left>
+                        <Body>
+                            <Text style={styles.description}>Review Complain</Text>
+                        </Body>
+                    </ListItem>
+
+
+                    <ListItem icon  onPress={()=>Actions.logout()}>
+                        <Left>
+                            <Button style={{ backgroundColor: "#4CDA64", marginTop: 2 }}>
+                            <Icon active name="log-out" />
+                            </Button>
+                        </Left>
+                        <Body>
+                            <Text style={styles.description}>Log Out</Text>
+                        </Body>
+                    </ListItem>
+
+                    </List>
+                </Content>
+            </View>
+
+          </View>
+  
     );
   }
 }
+
+
+const styles = StyleSheet.create({
+  description:{
+      fontSize:16,
+      color: "#696969",
+      marginTop:5,
+      fontWeight: "400",
+    },
+    avatar: {
+      width: 120,
+      height: 120,
+      borderRadius: 63,
+      borderWidth: 4,
+      borderColor: "white",
+      marginBottom:10, 
+      alignSelf:'center',
+      position: 'absolute',
+      marginTop:30
+    },
+    name:{
+      fontSize:23,
+      color: "#ffffff",
+      fontWeight: "600",
+      marginTop:160
+    },
+    info:{
+      fontSize:15,
+      color: "#ffffff",
+      marginTop:2,
+    },
+})
