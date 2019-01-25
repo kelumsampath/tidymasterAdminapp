@@ -47,7 +47,7 @@ export default class RejectedJobs extends Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        status:"rejected"
+        status: "rejected"
       })
 
     })
@@ -119,9 +119,9 @@ export default class RejectedJobs extends Component {
     //console.log('this is index number : '+index)
 
     //console.log(item+' this is original data')
-    
+
     return (
-      <List  style={styles.card}>
+      <List style={styles.card}>
         <ListItem>
           <View style={styles.container}>
             <View style={styles.content}>
@@ -129,38 +129,38 @@ export default class RejectedJobs extends Component {
               <Text rkType='primary3 mediumLine'>Payment Status:{data.paymentstatus}</Text>
               <Text rkType='primary3 mediumLine'>Location:{data.joblocation}</Text>
               <Text rkType='primary3 mediumLine'>Catogary:{data.categoryname}</Text>
-              <Text rkType='primary3 mediumLine'style={styles.time}>Posted: {this.getdate(data.updatedDate)} {this.getval(data.updatedDate)}</Text>
+              <Text rkType='primary3 mediumLine' style={styles.time}>Posted: {this.getdate(data.updatedDate)} {this.getval(data.updatedDate)}</Text>
             </View>
-          </View>  
+          </View>
         </ListItem>
         <ListItem>
-        <View style={styles.containerbtn}>
-              <View style={styles.buttonContainer}>
-                <Button title="ACCEPT" 
+          <View style={styles.containerbtn}>
+            <View style={styles.buttonContainer}>
+              <Button title="ACCEPT"
                 color="#00B000"
-                onPress = {
+                onPress={
                   () => {
-                    appinit.data.postid=data.postid;
+                    appinit.data.postid = data.postid;
                     Actions.Accept();
                   }
-                }/>
-              </View>
-              <View style={styles.buttonContainer}>
-                <Button title="PENDING"
+                } />
+            </View>
+            <View style={styles.buttonContainer}>
+              <Button title="PENDING"
                 color="#AFAF00"
-                onPress = {
+                onPress={
                   () => {
-                    appinit.data.postid=data.postid;
+                    appinit.data.postid = data.postid;
                     Actions.Pending();
                   }
-               }/>
-              </View>
+                } />
             </View>
+          </View>
         </ListItem>
       </List>
 
     );
-    
+
   }
 
   render() {
@@ -225,22 +225,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#7a42f4',
     padding: 10,
     height: 30,
-    width:60,
+    width: 60,
     flexDirection: "row"
- },
- 
- submitButtonText:{
-   fontSize:10,
-  color: 'white'
-},
-containerbtn: {
-  flex: 1,
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'center',
-  
-},
-buttonContainer: {
-  flex: 1,
-},
+  },
+
+  submitButtonText: {
+    fontSize: 10,
+    color: 'white'
+  },
+  containerbtn: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+
+  },
+  buttonContainer: {
+    flex: 1,
+  },
 })
