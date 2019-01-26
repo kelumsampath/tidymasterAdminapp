@@ -105,6 +105,17 @@ export default class SideBar extends React.Component {
                                 </Body>
                             </ListItem>
 
+                            <ListItem icon onPress={() => Actions.Profile()}>
+                                <Left>
+                                    <Button style={{ backgroundColor: "#4CDA64", marginTop: 2 }}>
+                                        <Icon active name="send" />
+                                    </Button>
+                                </Left>
+                                <Body>
+                                    <Text style={styles.description}>My Profile</Text>
+                                </Body>
+                            </ListItem>
+
                             <Separator bordered />
 
                             <ListItem icon onPress={() => Actions.JobReview()}>

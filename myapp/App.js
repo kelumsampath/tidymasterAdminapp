@@ -39,6 +39,7 @@ import checkedcomplains from './routes/app/complain/checkedcomplain';
 import CreateNewUser from './routes/app/addNewUser/CreateNewUser';
 import JobReview from './routes/app/jobreview/JobReview';
 import ReviewComplaigns from './routes/app/complain/ReviewComplaign';
+import Profile from './routes/app/Profile';
 
 const TabIcon=({ selected , title})=>{
   return(
@@ -94,10 +95,17 @@ export default class App extends Component{
               title='searchuser'
               />
 
+
               <Scene
               key='CreateNewUser'
               component={CreateNewUser}
               title='CreateNewUser'
+              />
+
+              <Scene
+              key='Profile'
+              component={Profile}
+              title='Profile'
               />
 
               <Scene
