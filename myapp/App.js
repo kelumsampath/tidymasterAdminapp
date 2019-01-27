@@ -43,6 +43,7 @@ import Profile from './routes/app/Profile';
 import Reviewjobsuccess from './routes/tempory/Reviewjobsucccess';
 import Complainsuccess from './routes/tempory/complainsuccess';
 import Regusersuccess from './routes/tempory/Regsuccess';
+import Jobpostview from './routes/tempory/Jobpostview';
 
 const TabIcon=({ selected , title})=>{
   return(
@@ -144,7 +145,7 @@ export default class App extends Component{
           <Scene key="warnuser" component={warnuser} title="warn"></Scene>
           <Scene key="deleteuser" component={deleteuser} title="delete"></Scene>
 
-          
+          <Scene key="Jobpostview" component={Jobpostview} title="Jobpostview"></Scene>
 
         </Scene>
 

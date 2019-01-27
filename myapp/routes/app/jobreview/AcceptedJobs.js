@@ -122,7 +122,12 @@ export default class AcceptedJobs extends Component {
     
     return (
       <List  style={styles.card}>
-        <ListItem>
+        <ListItem onPress = {
+                  () => {
+                    appinit.data.jobpostid=data.postid;
+                    Actions.Jobpostview();
+                  }
+                }>
           <View style={styles.container}>
             <View style={styles.content}>
               <Text style={styles.name} rkType='primary3 mediumLine'>{data.title}</Text>
