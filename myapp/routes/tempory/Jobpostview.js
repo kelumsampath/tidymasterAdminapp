@@ -68,15 +68,18 @@ export default class CusJobDetails extends Component {
               <ListItem >
                 <Body>
                 
-                  <Text>{item.title}</Text>
-                  <Text note>{item.dateandtime}</Text>
-                  <Text note>{item.estimatedtime}</Text>
-                  <Text note>{item.jobid}</Text>
-                  <Text note>{item.numberofcleaners}</Text>
-                  <Text note>{item.status}</Text>
-                  <Text note>{item.paymentstatus}</Text>
-                  <Text note>{item.cleanerId}</Text>
-                 
+                  <Text>Job Title :{item.title}</Text>
+                  <Text note>Post ID: {item.postid}</Text>
+                  <Text note>job date: {item.jobdate}</Text>
+                  <Text note>Estimated time: {item.estimatedtime}</Text>
+                  <Text note>Number of cleaners: {item.numberofcleaners}</Text>
+                  <Text note>status: {item.status}</Text>
+                  <Text note>paymet Status: {item.paymentstatus}</Text>
+                  <Text note>post by: {item.customerid}</Text>
+                  <Text note>Level of Job: {item.levelofjob}</Text>
+                  <Text note>Prefered gender: {item.employeegender}</Text>
+                  <Text note>Locaton: {item.joblocation}</Text>
+                  <Text note>Catogory: {item.categoryname}</Text>
                 </Body>
               </ListItem>
               }>
