@@ -48,7 +48,7 @@ export default class SideBar extends React.Component {
             <View style={{ flex: 1 }}>
 
 
-                <View style={{ flex: 1, overflow: 'hidden', alignItems: 'center', backgroundColor: '#5297e4' }}>
+                <View style={{ flex: 1, overflow: 'hidden', alignItems: 'center', backgroundColor: '#00BFFF' }}>
                     <Image square style={styles.avatar} source={{ uri: appint.data.picurl }} />
                     <Text style={styles.name}>{appint.data.username}</Text>
                 </View>
@@ -61,23 +61,23 @@ export default class SideBar extends React.Component {
 
                             <ListItem icon onPress={() => Actions.screen1()}>
                                 <Left>
-                                    <Button style={{ backgroundColor: "#FF9501" }}>
-                                        <Icon active name="briefcase" />
+                                    <Button style={{ backgroundColor: "#4CDA64" }}>
+                                        <Icon active name="trending-up" />
                                     </Button>
                                 </Left>
                                 <Body>
-                                    <Text style={styles.description}>Screen 1</Text>
+                                    <Text style={styles.description}>Weekly Users</Text>
                                 </Body>
                             </ListItem>
 
                             <ListItem icon onPress={() => Actions.screen2()}>
                                 <Left>
-                                    <Button style={{ backgroundColor: "#000000" }}>
-                                        <Icon active name="contact" />
+                                    <Button style={{ backgroundColor: "#4CDA64" }}>
+                                        <Icon active name="trending-up" />
                                     </Button>
                                 </Left>
                                 <Body>
-                                    <Text style={styles.description}>Monthly Views</Text>
+                                    <Text style={styles.description}>Monthly Users</Text>
                                 </Body>
                             </ListItem>
 
@@ -86,7 +86,7 @@ export default class SideBar extends React.Component {
                             <ListItem icon onPress={() => Actions.searchuser()}>
                                 <Left>
                                     <Button style={{ backgroundColor: "#4CDA64", marginTop: 2 }}>
-                                        <Icon active name="add" />
+                                        <Icon active name="search" />
                                     </Button>
                                 </Left>
                                 <Body>
@@ -97,7 +97,7 @@ export default class SideBar extends React.Component {
                             <ListItem icon onPress={() => Actions.CreateNewUser()}>
                                 <Left>
                                     <Button style={{ backgroundColor: "#4CDA64", marginTop: 2 }}>
-                                        <Icon active name="send" />
+                                        <Icon active name="person-add" />
                                     </Button>
                                 </Left>
                                 <Body>
@@ -108,7 +108,7 @@ export default class SideBar extends React.Component {
                             <ListItem icon onPress={() => Actions.Profile()}>
                                 <Left>
                                     <Button style={{ backgroundColor: "#4CDA64", marginTop: 2 }}>
-                                        <Icon active name="send" />
+                                        <Icon active name="contact" />
                                     </Button>
                                 </Left>
                                 <Body>
@@ -121,7 +121,7 @@ export default class SideBar extends React.Component {
                             <ListItem icon onPress={() => Actions.JobReview()}>
                                 <Left>
                                     <Button style={{ backgroundColor: "#4CDA64", marginTop: 2 }}>
-                                        <Icon active name="log-out" />
+                                        <Icon active name="list-box" />
                                     </Button>
                                 </Left>
                                 <Body>
@@ -132,7 +132,7 @@ export default class SideBar extends React.Component {
                             <ListItem icon onPress={() => Actions.ReviewComplaigns()}>
                                 <Left>
                                     <Button style={{ backgroundColor: "#4CDA64", marginTop: 2 }}>
-                                        <Icon active name="log-out" />
+                                        <Icon active name="warning" />
                                     </Button>
                                 </Left>
                                 <Body>

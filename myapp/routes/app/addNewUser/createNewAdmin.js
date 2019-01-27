@@ -397,13 +397,13 @@ const styles = StyleSheet.create({
     marginTop:5,
     marginBottom:5,
     borderWidth: 1,
-    borderColor: "#00FF00"
+    borderColor: "#4CDA64"
   },
   corr:{
     marginTop:5,
     marginBottom:5,
     borderWidth: 1,
-    borderColor: "#8FBC8F"
+    borderColor: "#899B60"
   },
   txtBox: {
     backgroundColor: '#ffffff',
@@ -415,11 +415,11 @@ const styles = StyleSheet.create({
   },
   correct:{
     fontSize: 30, 
-    color:"#8FBC8F" 
+    color:"#899B60" 
   },
   wrong:{
     fontSize: 30,
-    color:"#00FF00" 
+    color:"#4CDA64" 
   },
   signBtn:{
     marginTop: 10
