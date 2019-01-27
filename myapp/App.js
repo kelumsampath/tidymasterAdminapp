@@ -48,6 +48,7 @@ import Complainview from './routes/tempory/complainview';
 import Actioncomplainview from './routes/tempory/actioncompainview';
 import Userprofile from './routes/tempory/userprofile';
 import Adminprofile from './routes/tempory/adminprofile';
+import Welcome from './routes/login/welcome';
 
 const TabIcon=({ selected , title})=>{
   return(
@@ -68,13 +69,19 @@ export default class App extends Component{
 
         <Scene key="root">
          
+        <Scene
+          key='Welcome'
+          hideNavBar
+          component={Welcome}
+          title='Welcome'
+          initial
+          />
               
           <Scene
           key='login'
           hideNavBar
           component={Login}
           title='Login'
-          initial
           />
 
           <Scene
