@@ -17,7 +17,8 @@ export default class Profile extends Component {
 
   state = {
     token: "",
-    data: []
+    data: [],
+    gender:""
   }
 
   handletoken = (text) => {
@@ -59,7 +60,11 @@ export default class Profile extends Component {
 
           if (res.state === true) {
             this.setState({ data: res.userdata });
-            
+            if(res.userdata.gender==="M"){
+              this.state.gender="Male"
+            }else{
+              this.state.gender="Female"
+            }
           } else {
               alert(res.msg)
           }
@@ -78,24 +83,16 @@ export default class Profile extends Component {
             <View style={styles.bodyContent}>
               <Text style={styles.name}>{this.state.data.firstName} {this.state.data.lastName}</Text>
               <Text style={styles.info}>{this.state.data.username} </Text>
+              <Text>Role: {this.state.data.rolename} </Text>
              
-              <View style={styles.starContainer}>
-            <Image style={styles.star} source={{uri:"https://img.icons8.com/color/40/000000/star.png"}}/>
-            <Image style={styles.star} source={{uri:"https://img.icons8.com/color/40/000000/star.png"}}/>
-            <Image style={styles.star} source={{uri:"https://img.icons8.com/color/40/000000/star.png"}}/>
-            <Image style={styles.star} source={{uri:"https://img.icons8.com/color/40/000000/star.png"}}/>
-            <Image style={styles.star} source={{uri:"https://img.icons8.com/color/40/000000/star.png"}}/>
-             </View>
              <Text></Text>
+             <Text>Email: {this.state.data.email} </Text>
+             <Text>NIC: {this.state.data.nic} </Text>
+             <Text>Phone: {this.state.data.telephone} </Text>
+             <Text>Gender: {this.state.data.gender} </Text>
+             <Text>Address: {this.state.data.address} </Text>
              <Text></Text>
-             <Text></Text>
-            
-              <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Opcion 1</Text>  
-              </TouchableOpacity>              
-              <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Opcion 2</Text> 
-              </TouchableOpacity>
+             
             </View>
         </View>
       </View>
@@ -106,18 +103,18 @@ export default class Profile extends Component {
 const styles = StyleSheet.create({
   header:{
     backgroundColor: "#00BFFF",
-    height:200,
+    height:100,
   },
   avatar: {
     width: 130,
     height: 130,
     borderRadius: 63,
     borderWidth: 4,
-    borderColor: "#4169E1",
+    borderColor: "#ADADAD",
     marginBottom:10,
     alignSelf:'center',
     position: 'absolute',
-    marginTop:130
+    marginTop:30
   },
   name:{
     fontSize:22,
