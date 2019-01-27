@@ -69,6 +69,13 @@ export default class Actioncomplainview extends Component {
                   <Text note>Action ID : {this.state.data2.actionId}</Text>
                   <Text note>Action : {this.state.data2.action}</Text>
                   <Text note>Action taken by (user ID) : {this.state.data2.uid}</Text>
+                  <Button style={styles.signBtn} full rounded info
+                  onPress = {() => {
+                    appinit.data.admId=this.state.data2.adminId;
+                    Actions.Adminprofile();
+                  }}>
+                   <Text> View Admin profile  </Text> 
+             </Button>
           </Content>
         </Container>
       );

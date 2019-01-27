@@ -77,6 +77,15 @@ export default class Complainview extends Component {
                    <Text> View Job  </Text> 
              </Button>
                   <Text note>User ID : {this.state.data.uid}</Text>
+                <Button style={styles.signBtn} full rounded info
+                   onPress = {
+                    () => {
+                      appinit.data.username=this.state.data.username;
+                      Actions.Userprofile();
+                    }
+                  }>
+                   <Text> View USer  </Text> 
+             </Button>
           </Content>
         </Container>
       );
