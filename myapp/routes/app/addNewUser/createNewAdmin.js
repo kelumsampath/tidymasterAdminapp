@@ -160,8 +160,8 @@ export default class CreateNewAdmin extends Component {
       .then((res) => {
 
         if (res.state === true) {
-          alert(res.msg)
-          Actions.CreateNewUser()
+          //alert(res.msg)
+          Actions.Regusersuccess()
         } else {
           alert(res.msg)
         }

@@ -40,6 +40,9 @@ import CreateNewUser from './routes/app/addNewUser/CreateNewUser';
 import JobReview from './routes/app/jobreview/JobReview';
 import ReviewComplaigns from './routes/app/complain/ReviewComplaign';
 import Profile from './routes/app/Profile';
+import Reviewjobsuccess from './routes/tempory/Reviewjobsucccess';
+import Complainsuccess from './routes/tempory/complainsuccess';
+import Regusersuccess from './routes/tempory/Regsuccess';
 
 const TabIcon=({ selected , title})=>{
   return(
@@ -125,6 +128,10 @@ export default class App extends Component{
               component={Logout}
               title='Logout'
               />
+
+              <Scene key="Reviewjobsuccess" component={Reviewjobsuccess} title="Reviewjobsuccess" hideNavBar></Scene>
+              <Scene key="Complainsuccess" component={Complainsuccess} title="Complainsuccess" hideNavBar></Scene>
+              <Scene key="Regusersuccess" component={Regusersuccess} title="Regusersuccess" hideNavBar></Scene>
           </Scene>
 
           <Scene key="warncomplaineduser" component={warncomplaineduser} title="warncomplaineduser"></Scene>
@@ -136,6 +143,8 @@ export default class App extends Component{
 
           <Scene key="warnuser" component={warnuser} title="warn"></Scene>
           <Scene key="deleteuser" component={deleteuser} title="delete"></Scene>
+
+          
 
         </Scene>
 

@@ -67,7 +67,7 @@ export default class Reject extends Component {
           .then((res) => {
     
             if (res.state === true) {
-              Actions.JobReview();
+              Actions.Reviewjobsuccess();
             } else {
               alert(res.msg)
             }

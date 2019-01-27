@@ -68,8 +68,8 @@ export default class warnuser extends Component {
           .then((res) => {
     
             if (res.state === true) {
-              alert(res.msg) 
-              Actions.ReviewComplaigns();
+              //alert(res.msg) 
+              Actions.Complainsuccess();
             } else {
               alert(res.msg)
             }

@@ -67,7 +67,7 @@ export default class Pending extends Component {
           .then((res) => {
     
             if (res.state === true) {
-              Actions.JobReview();
+              Actions.Reviewjobsuccess();
             } else {
               alert(res.msg)
             }
