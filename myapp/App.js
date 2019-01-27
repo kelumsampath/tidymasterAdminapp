@@ -88,26 +88,26 @@ export default class App extends Component{
               <Scene
               key='screen1'
               component={Screen1}
-              title='Screen1'
+              title='Weekly User Views'
               />
 
               <Scene
               key='screen2'
               component={Screen2}
-              title='Screen2'
+              title='Monthly User Views'
               />
 
               <Scene
               key='searchuser'
               component={SearchUser}
-              title='searchuser'
+              title='Search User'
               />
 
 
               <Scene
               key='CreateNewUser'
               component={CreateNewUser}
-              title='CreateNewUser'
+              title='Create New User'
               />
 
               <Scene
@@ -119,13 +119,13 @@ export default class App extends Component{
               <Scene
               key='JobReview'
               component={JobReview}
-              title='JobReview'
+              title='Job Post Review'
               />
 
               <Scene
               key='ReviewComplaigns'
               component={ReviewComplaigns}
-              title='ReviewComplaigns'
+              title='Complain Review'
               />
               
               <Scene
@@ -134,14 +134,14 @@ export default class App extends Component{
               title='Logout'
               />
 
-              <Scene key="Reviewjobsuccess" component={Reviewjobsuccess} title="Reviewjobsuccess" hideNavBar></Scene>
-              <Scene key="Complainsuccess" component={Complainsuccess} title="Complainsuccess" hideNavBar></Scene>
-              <Scene key="Regusersuccess" component={Regusersuccess} title="Regusersuccess" hideNavBar></Scene>
+              <Scene key="Reviewjobsuccess" component={Reviewjobsuccess} title="Review" hideNavBar></Scene>
+              <Scene key="Complainsuccess" component={Complainsuccess} title="Review" hideNavBar></Scene>
+              <Scene key="Regusersuccess" component={Regusersuccess} title="Review" hideNavBar></Scene>
               
           </Scene>
 
-          <Scene key="warncomplaineduser" component={warncomplaineduser} title="warncomplaineduser"></Scene>
-          <Scene key="deletecomplaineduser" component={deletecomplaineduser} title="deletecomplaineduser"></Scene>
+          <Scene key="warncomplaineduser" component={warncomplaineduser} title="Warn Complained User"></Scene>
+          <Scene key="deletecomplaineduser" component={deletecomplaineduser} title="Remove Complained User"></Scene>
 
           <Scene key="Accept" component={Accept} title="Accept"></Scene>
           <Scene key="Reject" component={Reject} title="Reject"></Scene>
@@ -150,11 +150,11 @@ export default class App extends Component{
           <Scene key="warnuser" component={warnuser} title="warn"></Scene>
           <Scene key="deleteuser" component={deleteuser} title="delete"></Scene>
 
-          <Scene key="Jobpostview" component={Jobpostview} title="Jobpostview"></Scene>
-          <Scene key="Complainview" component={Complainview} title="Complainview"></Scene>
-          <Scene key="Actioncomplainview" component={Actioncomplainview} title="Actioncomplainview"></Scene>
-          <Scene key="Userprofile" component={Userprofile} title="Userprofile"></Scene>
-          <Scene key="Adminprofile" component={Adminprofile} title="Adminprofile"></Scene>
+          <Scene key="Jobpostview" component={Jobpostview} title="Job Post Details"></Scene>
+          <Scene key="Complainview" component={Complainview} title="Complain View"></Scene>
+          <Scene key="Actioncomplainview" component={Actioncomplainview} title="Reviewed Complain View"></Scene>
+          <Scene key="Userprofile" component={Userprofile} title="User Profile"></Scene>
+          <Scene key="Adminprofile" component={Adminprofile} title="User Profile"></Scene>
         </Scene>
 
       </Router>
