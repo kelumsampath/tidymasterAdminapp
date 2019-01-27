@@ -9,7 +9,8 @@ var mydata=module.exports.data={
   compuid:"",
   complainid:"",
   jobpostid:"",
-  complnid:""
+  complnid:"",
+  username:""
 }
 
 module.exports.profdata=(token)=>{

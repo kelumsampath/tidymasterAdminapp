@@ -7,6 +7,7 @@ import {
   TouchableOpacity,AsyncStorage
 } from 'react-native';
 var config = require('./../../screen/config');
+var appinit = require('./../../screen/appint');
 import { Actions } from 'react-native-router-flux';
 
 export default class Profile extends Component {
@@ -18,6 +19,7 @@ export default class Profile extends Component {
   state = {
     token: "",
     data: [],
+    username:appinit.data.username
   }
 
   handletoken = (text) => {
@@ -45,12 +47,15 @@ export default class Profile extends Component {
 
   GetProfile() {
     //alert(this.state.token)
-    fetch(config.config.hostname+'/user/profile', {
-      method: 'GET',
+    fetch(config.config.hostname+'/admin/userprofile', {
+      method: 'POST',
       headers: {
         "Authorization": this.state.token,
         'Content-Type': 'application/json'
-      }
+      },
+      body: JSON.stringify({
+        "username":this.state.username
+      }),
       
   })
 
@@ -59,7 +64,6 @@ export default class Profile extends Component {
 
           if (res.state === true) {
             this.setState({ data: res.userdata });
-            
           } else {
               alert(res.msg)
           }

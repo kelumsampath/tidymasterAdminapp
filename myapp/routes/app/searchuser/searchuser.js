@@ -127,7 +127,12 @@ export default class SearchUser extends Component {
     
     return (
       <List  style={styles.card}>
-        <ListItem>
+        <ListItem onPress = {
+                  () => {
+                    appinit.data.username=data.username;
+                    Actions.Userprofile();
+                  }
+                }>
           <View style={styles.container}>
             <View style={styles.content}>
               <Text style={styles.name} rkType='primary3 mediumLine'>{data.username}</Text>
