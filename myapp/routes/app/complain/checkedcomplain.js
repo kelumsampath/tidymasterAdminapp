@@ -123,7 +123,12 @@ export default class checkedcomplains extends Component {
     
     return (
       <List  style={styles.card}>
-        <ListItem>
+        <ListItem onPress = {
+                  () => {
+                    appinit.data.complnid=data.complainid;
+                    Actions.Actioncomplainview();
+                  }
+                }>
           <View style={styles.container}>
             <View style={styles.content}>
               <Text style={styles.name} rkType='primary3 mediumLine'>complain ID:{data.complainid}</Text>
@@ -166,7 +171,7 @@ const styles = StyleSheet.create({
   card: {
     marginBottom: 15,
     marginLeft: 0,
-    height: 350,
+    height: 250,
     borderColor: '#7a42f4',
     borderWidth: 1
   },
