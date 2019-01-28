@@ -106,7 +106,7 @@ class Login extends Component{
              </Button>
 
              <View style={styles.blockUnderLogin}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>Actions.fogetpassword()}>
               <Text style={styles.forgot}> Forget password ? </Text>
             </TouchableOpacity>
 

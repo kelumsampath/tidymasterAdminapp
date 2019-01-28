@@ -49,6 +49,7 @@ import Actioncomplainview from './routes/tempory/actioncompainview';
 import Userprofile from './routes/tempory/userprofile';
 import Adminprofile from './routes/tempory/adminprofile';
 import Welcome from './routes/login/welcome';
+import fogetpassword from './routes/tempory/fogetpass';
 
 const TabIcon=({ selected , title})=>{
   return(
@@ -82,6 +83,13 @@ export default class App extends Component{
           hideNavBar
           component={Login}
           title='Login'
+          />
+
+          <Scene
+          key='fogetpassword'
+          hideNavBar
+          component={fogetpassword}
+          title='Foget password'
           />
 
           <Scene
